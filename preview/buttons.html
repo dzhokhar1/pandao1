@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--pd-font);font-weight:700;font-size:16px;border-radius:14px;padding:16px 26px;cursor:pointer;border:none;transition:all .18s cubic-bezier(.2,.7,.2,1);}
+  .btn svg{width:20px;height:20px;}
+  .primary{background:var(--pd-red);color:#fff;box-shadow:var(--pd-shadow-red);}
+  .primary:hover{background:var(--pd-red-deep);transform:translateY(-2px);}
+  .secondary{background:transparent;color:var(--pd-ink);border:1.5px solid var(--pd-ink);}
+  .secondary:hover{background:var(--pd-ink);color:#fff;}
+  .secondary:hover svg{color:#fff;}
+</style>
+</head>
+<body>
+  <button class="btn primary">Рассчитать доставку <i data-lucide="arrow-right"></i></button>
+  <button class="btn secondary">Посмотреть услуги <i data-lucide="arrow-right"></i></button>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

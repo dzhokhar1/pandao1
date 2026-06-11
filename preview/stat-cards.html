@@ -1,0 +1,44 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:24px;display:flex;gap:16px;}
+  .card{flex:1;border-radius:var(--pd-r-lg);padding:24px;}
+  .light{background:var(--pd-white);border:1px solid var(--pd-line);box-shadow:var(--pd-shadow-md);}
+  .dark{background:var(--pd-dark);}
+  .ic{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .ic svg{width:28px;height:28px;color:var(--pd-red);stroke-width:1.75;}
+  .light .ic{background:#F1F0ED;}
+  .dark .ic{background:var(--pd-dark-2);}
+  .stat{font-family:var(--pd-display);font-weight:800;font-size:30px;letter-spacing:-.02em;}
+  .stat .u{font-size:20px;}
+  .light .stat{color:var(--pd-ink);}
+  .dark .stat{color:#fff;}
+  .sub{font-size:14px;margin-top:6px;line-height:1.4;}
+  .light .sub{color:var(--pd-muted);}
+  .dark .sub{color:var(--pd-on-dark-mut);}
+</style>
+</head>
+<body>
+  <div class="card light">
+    <div class="ic"><i data-lucide="container"></i></div>
+    <div class="stat">1 275 000+ <span class="u">кг</span></div>
+    <div class="sub">успешно доставленных товаров</div>
+  </div>
+  <div class="card dark">
+    <div class="ic"><i data-lucide="shield-check"></i></div>
+    <div class="stat">600 <span class="u">кг</span></div>
+    <div class="sub">утерянного груза полностью возместили клиентам</div>
+  </div>
+  <div class="card light">
+    <div class="ic"><i data-lucide="users"></i></div>
+    <div class="stat">1 200+</div>
+    <div class="sub">доверили нам свои грузы</div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

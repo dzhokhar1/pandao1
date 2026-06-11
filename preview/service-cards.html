@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:24px;display:flex;gap:16px;}
+  .card{flex:1;border-radius:var(--pd-r-lg);padding:26px;min-height:150px;}
+  .light{background:var(--pd-white);border:1px solid var(--pd-line);box-shadow:var(--pd-shadow-md);}
+  .dark{background:var(--pd-dark);position:relative;overflow:hidden;}
+  .ic{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .ic svg{width:30px;height:30px;color:var(--pd-red);stroke-width:1.75;}
+  .light .ic{background:#F1F0ED;}
+  .dark .ic{background:var(--pd-dark-2);}
+  h3{font-family:var(--pd-display);font-weight:700;font-size:21px;margin:0 0 9px;letter-spacing:-.01em;}
+  .light h3{color:var(--pd-ink);}
+  .dark h3{color:#fff;}
+  p{font-size:15px;line-height:1.45;margin:0;}
+  .light p{color:var(--pd-muted);}
+  .dark p{color:var(--pd-on-dark-mut);}
+</style>
+</head>
+<body>
+  <div class="card light">
+    <div class="ic"><i data-lucide="key-round"></i></div>
+    <h3>Доставка под ключ</h3>
+    <p>От приёмки груза в Китае до доставки на Северный Кавказ.</p>
+  </div>
+  <div class="card dark">
+    <div class="ic"><i data-lucide="container"></i></div>
+    <h3>Контейнерные перевозки</h3>
+    <p>Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.</p>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

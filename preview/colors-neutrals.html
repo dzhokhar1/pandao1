@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:22px;}
+  .row{display:flex;gap:12px;}
+  .sw{flex:1;border-radius:var(--pd-r-md);overflow:hidden;border:1px solid var(--pd-line);background:var(--pd-white);box-shadow:var(--pd-shadow-sm);}
+  .chip{height:64px;}
+  .meta{padding:9px 11px;}
+  .name{font-weight:700;font-size:12px;color:var(--pd-ink);}
+  .hex{font-size:11px;color:var(--pd-muted);margin-top:2px;}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--pd-ink)"></div><div class="meta"><div class="name">Ink</div><div class="hex">#15161A</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--pd-ink-2)"></div><div class="meta"><div class="name">Ink 2</div><div class="hex">#3D3F45</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--pd-muted)"></div><div class="meta"><div class="name">Muted</div><div class="hex">#767880</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--pd-faint)"></div><div class="meta"><div class="name">Faint</div><div class="hex">#A6A8AE</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--pd-bg)"></div><div class="meta"><div class="name">Page BG</div><div class="hex">#F4F3F1</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--pd-white);box-shadow:inset 0 0 0 1px var(--pd-line)"></div><div class="meta"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+  </div>
+</body>
+</html>

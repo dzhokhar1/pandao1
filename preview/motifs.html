@@ -1,0 +1,38 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:0;}
+  .wrap{position:relative;height:200px;overflow:hidden;
+    background-image:
+      radial-gradient(circle at 18% 60%, rgba(222,41,49,.05), transparent 40%),
+      linear-gradient(rgba(20,21,26,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(20,21,26,.04) 1px,transparent 1px);
+    background-size:auto, 26px 26px, 26px 26px;}
+  /* crosshair */
+  .cross{position:absolute;width:34px;height:34px;}
+  .cross::before,.cross::after{content:"";position:absolute;background:var(--pd-red);}
+  .cross::before{left:50%;top:0;width:1.5px;height:100%;transform:translateX(-50%);}
+  .cross::after{top:50%;left:0;height:1.5px;width:100%;transform:translateY(-50%);}
+  /* radar ping */
+  .ping{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--pd-red);box-shadow:0 0 0 6px rgba(222,41,49,.18),0 0 0 13px rgba(222,41,49,.08);}
+  .coord{position:absolute;font-size:12px;font-weight:500;color:var(--pd-faint);letter-spacing:.03em;line-height:1.5;}
+  svg.route{position:absolute;inset:0;width:100%;height:100%;}
+  .lbl{position:absolute;left:20px;bottom:14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pd-faint);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <svg class="route" viewBox="0 0 700 200" preserveAspectRatio="none">
+      <path d="M120,120 C260,40 420,180 600,70" fill="none" stroke="#DE2931" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+    </svg>
+    <div class="cross" style="left:96px;top:96px;"></div>
+    <div class="ping" style="left:585px;top:60px;"></div>
+    <div class="coord" style="left:24px;top:22px;">43.2389° N<br>45.7560° E</div>
+    <div class="lbl">Map texture · crosshair · radar ping · dashed route · coordinates</div>
+  </div>
+</body>
+</html>

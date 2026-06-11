@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--pd-bg);font-family:var(--pd-font);padding:24px;display:flex;gap:16px;}
+  .chip{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .chip svg{width:30px;height:30px;color:var(--pd-red);stroke-width:1.75;}
+  .light{background:#EFEEEB;}
+  .dark{background:var(--pd-dark-2);}
+  .panel{display:flex;gap:16px;padding:18px;border-radius:var(--pd-r-md);}
+  .panel.d{background:var(--pd-dark);}
+  .panel.l{background:var(--pd-white);border:1px solid var(--pd-line);}
+</style>
+</head>
+<body>
+  <div class="panel l">
+    <div class="chip light"><i data-lucide="container"></i></div>
+    <div class="chip light"><i data-lucide="warehouse"></i></div>
+    <div class="chip light"><i data-lucide="truck"></i></div>
+    <div class="chip light"><i data-lucide="shield-check"></i></div>
+    <div class="chip light"><i data-lucide="users"></i></div>
+  </div>
+  <div class="panel d">
+    <div class="chip dark"><i data-lucide="package"></i></div>
+    <div class="chip dark"><i data-lucide="key-round"></i></div>
+    <div class="chip dark"><i data-lucide="shopping-cart"></i></div>
+    <div class="chip dark"><i data-lucide="crosshair"></i></div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
