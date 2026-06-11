@@ -1,0 +1,150 @@
+/* ============================================================
+   PanDao Logistics — Colors & Type foundation
+   Brand: cargo / logistics, China → North Caucasus
+   Font: Onest (Google Fonts) — modern Cyrillic grotesque.
+   NOTE: Onest is a SUBSTITUTE for the original headline face,
+   which appears to be a heavier proprietary grotesque. Flagged
+   to the user — swap in real font files if available.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* ---- Brand palette ---- */
+  --pd-red:        #DE2931;  /* primary brand red (logo, accents, CTAs) */
+  --pd-red-deep:   #C01620;  /* button hover / pressed / deep red */
+  --pd-red-soft:   #FBEAEA;  /* faint red tint (icon chips on light) */
+  --pd-navy:       #392F6D;  /* "LOGISTICS COMPANY" indigo — secondary */
+
+  /* ---- Ink / neutrals ---- */
+  --pd-ink:        #15161A;  /* near-black headings & body */
+  --pd-ink-2:      #3D3F45;  /* secondary text */
+  --pd-muted:      #767880;  /* muted / supporting copy */
+  --pd-faint:      #A6A8AE;  /* captions, coordinates */
+  --pd-line:       #E6E5E2;  /* hairline borders on light */
+
+  /* ---- Surfaces ---- */
+  --pd-bg:         #F4F3F1;  /* page background (warm off-white) */
+  --pd-bg-2:       #FBFBFA;  /* raised light card */
+  --pd-white:      #FFFFFF;
+  --pd-dark:       #14151A;  /* dark feature cards / route panel */
+  --pd-dark-2:     #1C1D22;  /* dark card raised inner tile */
+  --pd-dark-line:  #2A2B31;  /* hairline on dark */
+  --pd-on-dark:    #F4F4F5;  /* text on dark */
+  --pd-on-dark-mut:#9A9CA3;  /* muted text on dark */
+
+  /* ---- Radii ---- */
+  --pd-r-sm:  10px;
+  --pd-r-md:  16px;
+  --pd-r-lg:  22px;   /* standard cards */
+  --pd-r-xl:  30px;   /* hero image / big panels */
+  --pd-r-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --pd-shadow-sm: 0 2px 8px rgba(20,21,26,.05);
+  --pd-shadow-md: 0 14px 36px rgba(20,21,26,.08);
+  --pd-shadow-lg: 0 28px 70px rgba(20,21,26,.12);
+  --pd-shadow-red: 0 16px 34px rgba(222,41,49,.28);
+
+  /* ---- Spacing scale (4px base) ---- */
+  --pd-s1: 4px;  --pd-s2: 8px;  --pd-s3: 12px; --pd-s4: 16px;
+  --pd-s5: 24px; --pd-s6: 32px; --pd-s7: 48px; --pd-s8: 64px;
+  --pd-s9: 96px;
+
+  /* ---- Type families ---- */
+  --pd-font: 'Onest', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --pd-display: 'Onest', system-ui, sans-serif; /* @kind font */
+}
+
+/* ============================================================
+   Semantic type styles
+   Display headings are heavy (800/900), very tight tracking.
+   ============================================================ */
+
+.pd-eyebrow {
+  font-family: var(--pd-font);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pd-red);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.pd-eyebrow::before {   /* short red dash lead-in */
+  content: "";
+  width: 34px;
+  height: 3px;
+  background: var(--pd-red);
+  border-radius: 2px;
+}
+
+.pd-h1 {
+  font-family: var(--pd-display);
+  font-weight: 800;
+  font-size: clamp(40px, 5.6vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--pd-ink);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.pd-h2 {
+  font-family: var(--pd-display);
+  font-weight: 800;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--pd-ink);
+  margin: 0;
+}
+
+.pd-h3 {
+  font-family: var(--pd-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--pd-ink);
+  margin: 0;
+}
+
+.pd-lead {
+  font-family: var(--pd-font);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--pd-ink-2);
+  margin: 0;
+}
+
+.pd-body {
+  font-family: var(--pd-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--pd-muted);
+  margin: 0;
+}
+
+.pd-stat {
+  font-family: var(--pd-display);
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  color: var(--pd-ink);
+}
+
+.pd-caption {
+  font-family: var(--pd-font);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--pd-faint);
+}
+
+/* Inline red emphasis used in body copy (e.g. "Китай") */
+.pd-em-red { color: var(--pd-red); font-weight: 700; }
+.pd-em-ink { color: var(--pd-ink); font-weight: 700; }
