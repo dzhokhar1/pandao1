@@ -4,9 +4,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PanDao Logistics — Доставка из Китая на Северный Кавказ</title>
-<link rel="preload" as="image" href="../../assets/hero-port.jpg">
+<title>PanDao Logistics — карго из Китая на Северный Кавказ под ключ</title>
+<meta name="description" content="PanDao Logistics — доставка грузов из Китая в Грозный, Пятигорск, Махачкалу и Минеральные Воды. Свой склад в Китае, выкуп товара, контейнерные и сборные перевозки от 100 кг. Честный расчёт и ответственность за каждый груз.">
+<meta name="keywords" content="карго из Китая, доставка из Китая на Северный Кавказ, грузоперевозки Китай Грозный, карго Пятигорск, доставка Махачкала, выкуп товара в Китае, сборные грузы, контейнерные перевозки, склад в Китае">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14151A">
+<link rel="canonical" href="https://pandao.ru/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- Open Graph / соцсети и мессенджеры -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PanDao Logistics">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="PanDao Logistics — карго из Китая на Северный Кавказ">
+<meta property="og:description" content="Доставка под ключ из любого города Китая в Грозный, Пятигорск, Махачкалу и Минеральные Воды. Свой склад, выкуп товара, перевозки от 100 кг.">
+<meta property="og:url" content="https://pandao.ru/">
+<meta property="og:image" content="https://pandao.ru/assets/hero-port.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PanDao Logistics — карго из Китая на Северный Кавказ">
+<meta name="twitter:description" content="Доставка под ключ из Китая на Северный Кавказ. Свой склад, выкуп товара, перевозки от 100 кг.">
+<meta name="twitter:image" content="https://pandao.ru/assets/hero-port.webp">
+
+<!-- Перф: ранний коннект к шрифтам + предзагрузка героя -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../../assets/hero-port.webp">
 <link rel="stylesheet" href="kit.css">
+
+<!-- Structured data: компания -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  "name": "PanDao Logistics",
+  "description": "Карго-доставка грузов из Китая на Северный Кавказ: контейнерные и сборные перевозки, выкуп товара, собственный склад в Китае.",
+  "url": "https://pandao.ru/",
+  "logo": "https://pandao.ru/assets/pandao-logo.svg",
+  "image": "https://pandao.ru/assets/hero-port.webp",
+  "telephone": "+7-928-000-00-00",
+  "priceRange": "$$",
+  "areaServed": ["Грозный", "Пятигорск", "Махачкала", "Минеральные Воды", "Россия", "СНГ"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CN",
+    "addressLocality": "Гуанчжоу"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  },
+  "sameAs": ["https://wa.me/79280000000", "https://t.me/pandao"]
+}
+</script>
+
+<!-- Structured data: FAQ → расширенный сниппет в поиске -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"За какой срок доставите груз из Китая на Северный Кавказ?","acceptedAnswer":{"@type":"Answer","text":"Сборные грузы в среднем идут 18–30 дней, контейнерные — от 25 дней. Точный срок логист называет при расчёте с учётом города и характера груза."}},
+    {"@type":"Question","name":"С каким минимальным весом вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Работаем с грузами от 100 кг. Для небольших партий выгодны сборные отправки — объединяем грузы нескольких клиентов в один контейнер."}},
+    {"@type":"Question","name":"Что будет, если груз повредят или потеряют?","acceptedAnswer":{"@type":"Answer","text":"Каждый груз застрахован и под нашей ответственностью. Если что-то пойдёт не по плану — возмещаем ущерб за свой счёт."}},
+    {"@type":"Question","name":"Помогаете ли с выкупом товара в Китае?","acceptedAnswer":{"@type":"Answer","text":"Да. Находим, проверяем и выкупаем товар, ведём переговоры с фабриками и сопровождаем сделку — вам не нужно лететь в Китай."}}
+  ]
+}
+</script>
 <style>
   /* Preloader — shows instantly before React/Babel compile; hidden after load. */
   #pd-preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -26,12 +91,27 @@
 </head>
 <body>
 <div id="pd-preloader">
-  <img class="pl-logo" src="../../assets/logo-white.png" alt="PanDao Logistics" width="210" height="79">
+  <img class="pl-logo" src="../../assets/pandao-logo-dark.svg" alt="PanDao Logistics" width="210" height="71">
   <div class="pl-track"><div class="pl-fill"></div></div>
   <div class="pl-cap">Китай → Северный Кавказ</div>
 </div>
 
 <div id="root"></div>
+
+<noscript>
+  <div style="max-width:760px;margin:0 auto;padding:40px 24px;font-family:'Onest',system-ui,sans-serif;color:#15161A;">
+    <h1>PanDao Logistics — доставка из Китая на Северный Кавказ</h1>
+    <p>PanDao Logistics специализируется на доставке грузов из любого города Китая на Северный Кавказ. Ключевые направления: Грозный, Пятигорск, Махачкала, Минеральные Воды.</p>
+    <h2>Наши услуги</h2>
+    <ul>
+      <li>Доставка под ключ — от приёмки груза в Китае до выдачи на Северном Кавказе.</li>
+      <li>Контейнерные перевозки и сборные грузы от 100 кг.</li>
+      <li>Собственный склад в Китае: приёмка, проверка, маркировка и хранение.</li>
+      <li>Байерские услуги — выкуп и проверка товара в Китае.</li>
+    </ul>
+    <p>Для просмотра сайта включите JavaScript. Связаться: телефон +7 (928) 000-00-00, WhatsApp и Telegram.</p>
+  </div>
+</noscript>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>

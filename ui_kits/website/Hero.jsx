@@ -19,8 +19,28 @@ function Hero() {
       <div className="pd-hero-coord">43.2389° N<br/>45.7560° E</div>
       <div className="pd-hero-cross"></div>
 
+      <div className="pd-wrap">
+        <div className="pd-hero-content">
+          <div className="pd-hero-route">Китай <span className="ar">→</span> Россия / СНГ / Северный Кавказ</div>
+          <h1>Доставка из Китая<br/>на Северный Кавказ</h1>
+          <div className="pd-divider"></div>
+          <p className="pd-hero-lead">
+            Возим грузы из любого города Китая прямо к вам на Северный Кавказ — без посредников
+            и сюрпризов в цене. Главные направления: <b>Грозный, Пятигорск, Махачкала,
+            Минеральные Воды.</b>
+          </p>
+          <p className="pd-hero-lead" style={{ marginTop: 16 }}>
+            Берём на себя весь путь: склад в Китае, выкуп, документы, таможню и доставку. Вы просто получаете товар.
+          </p>
+          <div className="pd-hero-cta">
+            <button className="pd-btn pd-btn--primary" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>Рассчитать доставку <Icon name="arrow-right" /></button>
+            <a className="pd-btn pd-btn--ghost" href="#uslugi">Посмотреть услуги <Icon name="arrow-right" /></a>
+          </div>
+        </div>
+      </div>
+
       <div className="pd-hero-photo">
-        <img src="../../assets/hero-port.jpg" alt="Контейнерный порт PanDao" width="1500" height="844" decoding="async" fetchpriority="high" />
+        <img src="../../assets/hero-port.webp" alt="Контейнерный порт PanDao" width="1500" height="844" decoding="async" fetchpriority="high" />
         <div className="pd-chip-accept">
           <span className="ic"><Icon name="warehouse" /></span>
           <div>
@@ -49,24 +69,6 @@ function Hero() {
       </div>
 
       <div className="pd-wrap">
-        <div className="pd-hero-content">
-          <div className="pd-hero-route">Китай <span className="ar">→</span> Россия / СНГ / Северный Кавказ</div>
-          <h1>Доставка из Китая<br/>на Северный Кавказ</h1>
-          <div className="pd-divider"></div>
-          <p className="pd-hero-lead">
-            PanDao Logistics специализируется на доставке грузов из любого города Китая
-            на Северный Кавказ. Ключевые направления: <b>Грозный, Пятигорск, Махачкала,
-            Минеральные Воды.</b>
-          </p>
-          <p className="pd-hero-lead" style={{ marginTop: 16 }}>
-            Работаем с рынками России и СНГ, но особенно глубоко специализируемся на этих маршрутах.
-          </p>
-          <div className="pd-hero-cta">
-            <button className="pd-btn pd-btn--primary" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>Рассчитать доставку <Icon name="arrow-right" /></button>
-            <a className="pd-btn pd-btn--ghost" href="#uslugi">Посмотреть услуги <Icon name="arrow-right" /></a>
-          </div>
-        </div>
-
         <div className="pd-herostats">
           {stats.map((s, i) => (
             <div className="cell" key={i}>

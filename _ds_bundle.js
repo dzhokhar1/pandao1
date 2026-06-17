@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/ContactModal.jsx":"946243f5f501","ui_kits/website/Contacts.jsx":"3c2602d315f0","ui_kits/website/CookieBanner.jsx":"1deb4680557a","ui_kits/website/Decor.jsx":"99c5b570373f","ui_kits/website/Facts.jsx":"8081e98882d5","ui_kits/website/Faq.jsx":"ccef29df3d97","ui_kits/website/Footer.jsx":"5b4d11197fd8","ui_kits/website/Header.jsx":"eecc813b583d","ui_kits/website/Hero.jsx":"0dc3db5afc70","ui_kits/website/Services.jsx":"1ccdd72496cb","ui_kits/website/SiteChrome.jsx":"9941ce7e9e8b","ui_kits/website/Warehouse.jsx":"eee2d778527a","ui_kits/website/effects.js":"399b95f31efd"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/ContactModal.jsx":"946243f5f501","ui_kits/website/Contacts.jsx":"3c2602d315f0","ui_kits/website/CookieBanner.jsx":"1deb4680557a","ui_kits/website/Decor.jsx":"99c5b570373f","ui_kits/website/Facts.jsx":"f55788f28153","ui_kits/website/Faq.jsx":"ccef29df3d97","ui_kits/website/Footer.jsx":"59bd79dd3c75","ui_kits/website/Header.jsx":"899f46bbf5a1","ui_kits/website/Hero.jsx":"2e1bc06c41ff","ui_kits/website/Services.jsx":"1a2904b5fe01","ui_kits/website/SiteChrome.jsx":"a91cd8a6bc58","ui_kits/website/Warehouse.jsx":"6c07c7bb463d","ui_kits/website/effects.js":"399b95f31efd"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -551,7 +551,7 @@ function Facts() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-img-main"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/hero-port.jpg",
+    src: "../../assets/hero-port.webp",
     alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao",
     width: "1500",
     height: "844",
@@ -581,7 +581,7 @@ function Facts() {
   }, "\u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0442\u043E\u0432\u0430\u0440\u043E\u0432")))), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-img-sub"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/warehouse.jpg",
+    src: "../../assets/warehouse.webp",
     alt: "\u0421\u043A\u043B\u0430\u0434 PanDao \u0432 \u041A\u0438\u0442\u0430\u0435",
     width: "1400",
     height: "957",
@@ -741,8 +741,10 @@ function Footer() {
     }
   }, /*#__PURE__*/React.createElement("img", {
     className: "logo",
-    src: "../../assets/pandao-logo.png",
-    alt: "PanDao"
+    src: "../../assets/pandao-logo-dark.svg",
+    alt: "PanDao Logistics",
+    width: "388",
+    height: "131"
   }), /*#__PURE__*/React.createElement("p", {
     style: {
       color: 'var(--pd-on-dark-mut)',
@@ -800,8 +802,10 @@ function Header() {
     className: "pd-header-in"
   }, /*#__PURE__*/React.createElement("img", {
     className: "pd-logo",
-    src: "../../assets/pandao-logo.png",
-    alt: "PanDao Logistics"
+    src: "../../assets/pandao-logo.svg",
+    alt: "PanDao Logistics",
+    width: "388",
+    height: "131"
   }), /*#__PURE__*/React.createElement("nav", {
     className: "pd-nav"
   }, links.map(l => /*#__PURE__*/React.createElement("a", {
@@ -822,7 +826,7 @@ function Header() {
     className: "pd-mobnav-top"
   }, /*#__PURE__*/React.createElement("img", {
     className: "pd-logo",
-    src: "../../assets/pandao-logo.png",
+    src: "../../assets/pandao-logo.svg",
     alt: "PanDao"
   }), /*#__PURE__*/React.createElement("button", {
     className: "pd-burger",
@@ -904,9 +908,38 @@ function Hero() {
   }, "43.2389\xB0 N", /*#__PURE__*/React.createElement("br", null), "45.7560\xB0 E"), /*#__PURE__*/React.createElement("div", {
     className: "pd-hero-cross"
   }), /*#__PURE__*/React.createElement("div", {
+    className: "pd-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-hero-content"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-hero-route"
+  }, "\u041A\u0438\u0442\u0430\u0439 ", /*#__PURE__*/React.createElement("span", {
+    className: "ar"
+  }, "\u2192"), " \u0420\u043E\u0441\u0441\u0438\u044F / \u0421\u041D\u0413 / \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"), /*#__PURE__*/React.createElement("h1", null, "\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430 \u0438\u0437 \u041A\u0438\u0442\u0430\u044F", /*#__PURE__*/React.createElement("br", null), "\u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"), /*#__PURE__*/React.createElement("div", {
+    className: "pd-divider"
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "pd-hero-lead"
+  }, "\u0412\u043E\u0437\u0438\u043C \u0433\u0440\u0443\u0437\u044B \u0438\u0437 \u043B\u044E\u0431\u043E\u0433\u043E \u0433\u043E\u0440\u043E\u0434\u0430 \u041A\u0438\u0442\u0430\u044F \u043F\u0440\u044F\u043C\u043E \u043A \u0432\u0430\u043C \u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437 \u2014 \u0431\u0435\u0437 \u043F\u043E\u0441\u0440\u0435\u0434\u043D\u0438\u043A\u043E\u0432 \u0438 \u0441\u044E\u0440\u043F\u0440\u0438\u0437\u043E\u0432 \u0432 \u0446\u0435\u043D\u0435. \u0413\u043B\u0430\u0432\u043D\u044B\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F: ", /*#__PURE__*/React.createElement("b", null, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439, \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A, \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430, \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B.")), /*#__PURE__*/React.createElement("p", {
+    className: "pd-hero-lead",
+    style: {
+      marginTop: 16
+    }
+  }, "\u0411\u0435\u0440\u0451\u043C \u043D\u0430 \u0441\u0435\u0431\u044F \u0432\u0435\u0441\u044C \u043F\u0443\u0442\u044C: \u0441\u043A\u043B\u0430\u0434 \u0432 \u041A\u0438\u0442\u0430\u0435, \u0432\u044B\u043A\u0443\u043F, \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B, \u0442\u0430\u043C\u043E\u0436\u043D\u044E \u0438 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443. \u0412\u044B \u043F\u0440\u043E\u0441\u0442\u043E \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0435 \u0442\u043E\u0432\u0430\u0440."), /*#__PURE__*/React.createElement("div", {
+    className: "pd-hero-cta"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "pd-btn pd-btn--primary",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
+  }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right"
+  })), /*#__PURE__*/React.createElement("a", {
+    className: "pd-btn pd-btn--ghost",
+    href: "#uslugi"
+  }, "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0443\u0441\u043B\u0443\u0433\u0438 ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right"
+  }))))), /*#__PURE__*/React.createElement("div", {
     className: "pd-hero-photo"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/hero-port.jpg",
+    src: "../../assets/hero-port.webp",
     alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao",
     width: "1500",
     height: "844",
@@ -950,33 +983,6 @@ function Hero() {
   }, s.lab)))))), /*#__PURE__*/React.createElement("div", {
     className: "pd-wrap"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "pd-hero-content"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "pd-hero-route"
-  }, "\u041A\u0438\u0442\u0430\u0439 ", /*#__PURE__*/React.createElement("span", {
-    className: "ar"
-  }, "\u2192"), " \u0420\u043E\u0441\u0441\u0438\u044F / \u0421\u041D\u0413 / \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"), /*#__PURE__*/React.createElement("h1", null, "\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430 \u0438\u0437 \u041A\u0438\u0442\u0430\u044F", /*#__PURE__*/React.createElement("br", null), "\u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"), /*#__PURE__*/React.createElement("div", {
-    className: "pd-divider"
-  }), /*#__PURE__*/React.createElement("p", {
-    className: "pd-hero-lead"
-  }, "PanDao Logistics \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u043D\u0430 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435 \u0433\u0440\u0443\u0437\u043E\u0432 \u0438\u0437 \u043B\u044E\u0431\u043E\u0433\u043E \u0433\u043E\u0440\u043E\u0434\u0430 \u041A\u0438\u0442\u0430\u044F \u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437. \u041A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F: ", /*#__PURE__*/React.createElement("b", null, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439, \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A, \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430, \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B.")), /*#__PURE__*/React.createElement("p", {
-    className: "pd-hero-lead",
-    style: {
-      marginTop: 16
-    }
-  }, "\u0420\u0430\u0431\u043E\u0442\u0430\u0435\u043C \u0441 \u0440\u044B\u043D\u043A\u0430\u043C\u0438 \u0420\u043E\u0441\u0441\u0438\u0438 \u0438 \u0421\u041D\u0413, \u043D\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0433\u043B\u0443\u0431\u043E\u043A\u043E \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u0435\u043C\u0441\u044F \u043D\u0430 \u044D\u0442\u0438\u0445 \u043C\u0430\u0440\u0448\u0440\u0443\u0442\u0430\u0445."), /*#__PURE__*/React.createElement("div", {
-    className: "pd-hero-cta"
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "pd-btn pd-btn--primary",
-    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
-  }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement(Icon, {
-    name: "arrow-right"
-  })), /*#__PURE__*/React.createElement("a", {
-    className: "pd-btn pd-btn--ghost",
-    href: "#uslugi"
-  }, "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0443\u0441\u043B\u0443\u0433\u0438 ", /*#__PURE__*/React.createElement(Icon, {
-    name: "arrow-right"
-  })))), /*#__PURE__*/React.createElement("div", {
     className: "pd-herostats"
   }, stats.map((s, i) => /*#__PURE__*/React.createElement("div", {
     className: "cell",
@@ -1011,37 +1017,37 @@ function Services() {
     em: '🗝️',
     anim: 'a-swing',
     t: 'Доставка под ключ',
-    d: 'От приёмки груза в Китае до доставки на Северный Кавказ.',
+    d: 'Один договор на весь путь — от приёмки на складе в Китае до выдачи у вас. Вы не бегаете между подрядчиками.',
     dark: false
   }, {
     em: '🚢',
     anim: 'a-float',
     t: 'Контейнерные перевозки',
-    d: 'Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.',
+    d: 'Свой контейнер под объём вашей партии. Подберём, что важнее именно вам: дешевле, быстрее или надёжнее.',
     dark: true
   }, {
     em: '📦',
     anim: 'a-bounce',
     t: 'Сборные грузы',
-    d: 'Объединяем грузы клиентов, чтобы снизить стоимость перевозки.',
+    d: 'Везёте мало? Догрузим вас к другим клиентам в один контейнер — платите только за свой объём.',
     dark: false
   }, {
     em: '🏭',
     anim: 'a-pulse',
     t: 'Склад в Китае',
-    d: 'Принимаем, проверяем, маркируем и готовим груз к отправке.',
+    d: 'Принимаем товар от поставщика, проверяем, фотографируем, маркируем и готовим к отправке. Всё под контролем.',
     dark: true
   }, {
     em: '🛒',
     anim: 'a-wiggle',
-    t: 'Байерские услуги',
-    d: 'Помогаем найти, проверить и выкупить товар в Китае.',
+    t: 'Выкуп товара',
+    d: 'Найдём поставщика, проверим качество и выкупим товар за вас. Вам не нужно знать китайский и лететь на фабрику.',
     dark: false
   }, {
     em: '🤝',
     anim: 'a-pulse',
     t: 'Сопровождение в Китае',
-    d: 'Встречаем, переводим, ведём переговоры и помогаем с фабриками.',
+    d: 'Встретим, переведём, поможем на переговорах и на производстве. Ваш человек на месте, когда нужно.',
     dark: true
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -1051,7 +1057,7 @@ function Services() {
     className: "pd-svc-bg"
   }, /*#__PURE__*/React.createElement("img", {
     className: "pd-svc-port",
-    src: "../../assets/hero-port.jpg",
+    src: "../../assets/hero-port.webp",
     alt: "",
     "aria-hidden": "true",
     loading: "lazy",
@@ -1081,7 +1087,7 @@ function Services() {
     className: "pd-head"
   }, /*#__PURE__*/React.createElement("span", {
     className: "pd-kicker"
-  }, "\u0423\u0441\u043B\u0443\u0433\u0438 PanDao"), /*#__PURE__*/React.createElement("h2", null, "\u041D\u0430\u0448\u0438 \u0443\u0441\u043B\u0443\u0433\u0438"), /*#__PURE__*/React.createElement("p", null, "\u041C\u044B \u043D\u0435 \u043F\u0440\u043E\u0441\u0442\u043E \u043F\u0435\u0440\u0435\u0434\u0430\u0451\u043C \u0433\u0440\u0443\u0437 \u0434\u0430\u043B\u044C\u0448\u0435. \u041C\u044B \u0441\u0442\u0440\u043E\u0438\u043C \u043C\u0430\u0440\u0448\u0440\u0443\u0442, \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u043C \u0441\u043A\u043B\u0430\u0434, \u0443\u043F\u0430\u043A\u043E\u0432\u043A\u0443, \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B \u0438 \u0434\u043E\u0432\u043E\u0434\u0438\u043C \u043F\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u0434\u043E \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u0430.")), /*#__PURE__*/React.createElement("div", {
+  }, "\u0423\u0441\u043B\u0443\u0433\u0438 PanDao"), /*#__PURE__*/React.createElement("h2", null, "\u041D\u0430\u0448\u0438 \u0443\u0441\u043B\u0443\u0433\u0438"), /*#__PURE__*/React.createElement("p", null, "\u041C\u044B \u043D\u0435 \u043F\u0435\u0440\u0435\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0435\u043C \u0433\u0440\u0443\u0437 \u0441 \u0440\u0443\u043A \u043D\u0430 \u0440\u0443\u043A\u0438 \u0438 \u043D\u0435 \u0442\u0435\u0440\u044F\u0435\u043C\u0441\u044F \u043D\u0430 \u043F\u043E\u043B\u043F\u0443\u0442\u0438. \u0421\u0442\u0440\u043E\u0438\u043C \u043C\u0430\u0440\u0448\u0440\u0443\u0442, \u0434\u0435\u0440\u0436\u0438\u043C \u0441\u043A\u043B\u0430\u0434, \u0443\u043F\u0430\u043A\u043E\u0432\u043A\u0443 \u0438 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B \u043F\u043E\u0434 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0435\u043C \u2014 \u0438 \u0434\u043E\u0432\u043E\u0434\u0438\u043C \u043F\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u0434\u043E \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u0430.")), /*#__PURE__*/React.createElement("div", {
     className: "pd-grid3"
   }, serv.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -1094,29 +1100,7 @@ function Services() {
     className: "pd-serv-body"
   }, /*#__PURE__*/React.createElement("h3", null, s.t), /*#__PURE__*/React.createElement("span", {
     className: "pd-serv-line"
-  }), /*#__PURE__*/React.createElement("p", null, s.d))))), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rchip"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ic"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "map-pin"
-  })), /*#__PURE__*/React.createElement("span", null, "\u041C\u0430\u0440\u0448\u0440\u0443\u0442\u044B: ", /*#__PURE__*/React.createElement("span", {
-    className: "ar"
-  }, "\u041A\u0438\u0442\u0430\u0439"), " ", /*#__PURE__*/React.createElement("span", {
-    className: "ar"
-  }, "\u2192"), /*#__PURE__*/React.createElement("span", {
-    className: "muted"
-  }, " \u0413\u0440\u043E\u0437\u043D\u044B\u0439 / \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A / \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430 / \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B")), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rchip-sep"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rchip-right"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ic"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "calendar-days"
-  })), /*#__PURE__*/React.createElement("span", {
-    className: "muted"
-  }, "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0440\u0435\u0439\u0441\u044B \u0438 \u0433\u0438\u0431\u043A\u0438\u0435 \u0441\u0440\u043E\u043A\u0438 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0438")))));
+  }), /*#__PURE__*/React.createElement("p", null, s.d)))))));
 }
 Object.assign(window, {
   Services
@@ -1194,7 +1178,12 @@ function StickyCTA() {
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "pd-sticky-cta"
-  }, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "pd-sticky-calc",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
+  }, /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "calculator"
+  }), " \u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C"), /*#__PURE__*/React.createElement("a", {
     className: "pd-sticky-msg pd-sticky-wa",
     href: "https://wa.me/79280000000",
     target: "_blank",
@@ -1206,12 +1195,7 @@ function StickyCTA() {
     target: "_blank",
     rel: "noopener noreferrer",
     "aria-label": "Telegram"
-  }, /*#__PURE__*/React.createElement(TGIcon, null)), /*#__PURE__*/React.createElement("button", {
-    className: "pd-sticky-calc",
-    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
-  }, /*#__PURE__*/React.createElement("i", {
-    "data-lucide": "calculator"
-  }), " \u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C"));
+  }, /*#__PURE__*/React.createElement(TGIcon, null)));
 }
 Object.assign(window, {
   ScrollProgress,
@@ -1266,27 +1250,27 @@ function Warehouse() {
     sub: 'потерянных грузов за 5 лет работы'
   }];
   const proc = [{
-    img: '01',
+    ic: 'package-check',
     no: '01',
     tt: 'Приём груза',
     dd: 'Принимаем товар от поставщика из любого города Китая'
   }, {
-    img: '02',
+    ic: 'search-check',
     no: '02',
     tt: 'Проверка',
     dd: 'Проверяем качество и соответствие вашего заказа'
   }, {
-    img: '03',
+    ic: 'package',
     no: '03',
     tt: 'Упаковка и маркировка',
     dd: 'Надёжно упакуем и промаркируем каждую единицу'
   }, {
-    img: '04',
+    ic: 'warehouse',
     no: '04',
     tt: 'Хранение',
     dd: 'Бережное хранение до отправки без лишних рисков'
   }, {
-    img: '05',
+    ic: 'truck',
     no: '05',
     tt: 'Отправка',
     dd: 'Формируем маршрут и отправляем на Северный Кавказ'
@@ -1338,7 +1322,7 @@ function Warehouse() {
     onClick: () => setPlaying(true),
     "aria-label": "\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u0440\u044F\u043C\u0443\u044E \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044E"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/warehouse.jpg",
+    src: "../../assets/warehouse.webp",
     alt: "\u041F\u0440\u044F\u043C\u0430\u044F \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044F \u0441\u043E \u0441\u043A\u043B\u0430\u0434\u0430 PanDao",
     width: "1400",
     height: "957",
@@ -1370,12 +1354,14 @@ function Warehouse() {
     className: "c",
     key: i
   }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-wh-top"
+  }, /*#__PURE__*/React.createElement("span", {
     className: "ic"
   }, /*#__PURE__*/React.createElement(Icon, {
     name: s.ic
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("span", {
     className: "big"
-  }, s.big), /*#__PURE__*/React.createElement("div", {
+  }, s.big)), /*#__PURE__*/React.createElement("div", {
     className: "sub"
   }, s.sub)))))), /*#__PURE__*/React.createElement("div", {
     className: "pd-proc-wrap"
@@ -1391,14 +1377,13 @@ function Warehouse() {
     className: "step"
   }, /*#__PURE__*/React.createElement("div", {
     className: "ph"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: `../../assets/proc-${p.img}.jpg`,
-    alt: p.tt,
-    width: "640",
-    height: "480",
-    loading: "lazy",
-    decoding: "async"
-  })), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-proc-ic"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: p.ic
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "pd-proc-wm"
+  }, p.no)), /*#__PURE__*/React.createElement("div", {
     className: "no"
   }, p.no), /*#__PURE__*/React.createElement("div", {
     className: "tt"

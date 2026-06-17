@@ -7,7 +7,7 @@ function Footer() {
       <div className="pd-wrap">
         <div className="pd-footer-grid">
           <div style={{ maxWidth: 280 }}>
-            <img className="logo" src="../../assets/pandao-logo.png" alt="PanDao" />
+            <img className="logo" src="../../assets/pandao-logo-dark.svg" alt="PanDao Logistics" width="388" height="131" />
             <p style={{ color: 'var(--pd-on-dark-mut)', fontSize: 15, lineHeight: 1.5, marginTop: 18 }}>
               Доставка грузов из любого города Китая на Северный Кавказ.
             </p>

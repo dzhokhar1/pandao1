@@ -7,7 +7,7 @@ function Header() {
     <React.Fragment>
       <header className="pd-header">
         <div className="pd-header-in">
-          <img className="pd-logo" src="../../assets/pandao-logo.png" alt="PanDao Logistics" />
+          <img className="pd-logo" src="../../assets/pandao-logo.svg" alt="PanDao Logistics" width="388" height="131" />
           <nav className="pd-nav">
             {links.map(l => <a key={l} href="#">{l}</a>)}
           </nav>
@@ -20,7 +20,7 @@ function Header() {
 
       <div className={"pd-mobnav" + (open ? " open" : "")}>
         <div className="pd-mobnav-top">
-          <img className="pd-logo" src="../../assets/pandao-logo.png" alt="PanDao" />
+          <img className="pd-logo" src="../../assets/pandao-logo.svg" alt="PanDao" />
           <button className="pd-burger" onClick={() => setOpen(false)} aria-label="Закрыть">
             <Icon name="x" />
           </button>

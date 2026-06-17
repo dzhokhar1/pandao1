@@ -67,7 +67,7 @@ function Facts() {
           {/* image stack */}
           <div className="pd-fc3-stack reveal">
             <div className="pd-fc3-img-main">
-              <img src="../../assets/hero-port.jpg" alt="Контейнерный порт PanDao" width="1500" height="844" loading="lazy" decoding="async" data-parallax="0.14" />
+              <img src="../../assets/hero-port.webp" alt="Контейнерный порт PanDao" width="1500" height="844" loading="lazy" decoding="async" data-parallax="0.14" />
               <span className="pd-fc3-coord">43.2389° N<br/>45.7560° E</span>
               <span className="pd-fc3-cross"></span>
               <div className="pd-fc3-flag">
@@ -79,7 +79,7 @@ function Facts() {
               </div>
             </div>
             <div className="pd-fc3-img-sub">
-              <img src="../../assets/warehouse.jpg" alt="Склад PanDao в Китае" width="1400" height="957" loading="lazy" decoding="async" data-parallax="0.2" />
+              <img src="../../assets/warehouse.webp" alt="Склад PanDao в Китае" width="1400" height="957" loading="lazy" decoding="async" data-parallax="0.2" />
               <div className="pd-fc3-subchip"><span className="dot"></span><span className="cu" data-count="1200" data-dur="1800">{fmt(1200)}</span>+ клиентов</div>
             </div>
             <span className="pd-fc3-ping"></span>

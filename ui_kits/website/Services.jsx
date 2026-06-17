@@ -2,17 +2,17 @@
 function Services() {
   React.useEffect(() => { window.lucide && lucide.createIcons(); }, []);
   const serv = [
-    { em: '🗝️', anim: 'a-swing', t: 'Доставка под ключ', d: 'От приёмки груза в Китае до доставки на Северный Кавказ.', dark: false },
-    { em: '🚢', anim: 'a-float', t: 'Контейнерные перевозки', d: 'Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.', dark: true },
-    { em: '📦', anim: 'a-bounce', t: 'Сборные грузы', d: 'Объединяем грузы клиентов, чтобы снизить стоимость перевозки.', dark: false },
-    { em: '🏭', anim: 'a-pulse', t: 'Склад в Китае', d: 'Принимаем, проверяем, маркируем и готовим груз к отправке.', dark: true },
-    { em: '🛒', anim: 'a-wiggle', t: 'Байерские услуги', d: 'Помогаем найти, проверить и выкупить товар в Китае.', dark: false },
-    { em: '🤝', anim: 'a-pulse', t: 'Сопровождение в Китае', d: 'Встречаем, переводим, ведём переговоры и помогаем с фабриками.', dark: true },
+    { em: '🗝️', anim: 'a-swing', t: 'Доставка под ключ', d: 'Один договор на весь путь — от приёмки на складе в Китае до выдачи у вас. Вы не бегаете между подрядчиками.', dark: false },
+    { em: '🚢', anim: 'a-float', t: 'Контейнерные перевозки', d: 'Свой контейнер под объём вашей партии. Подберём, что важнее именно вам: дешевле, быстрее или надёжнее.', dark: true },
+    { em: '📦', anim: 'a-bounce', t: 'Сборные грузы', d: 'Везёте мало? Догрузим вас к другим клиентам в один контейнер — платите только за свой объём.', dark: false },
+    { em: '🏭', anim: 'a-pulse', t: 'Склад в Китае', d: 'Принимаем товар от поставщика, проверяем, фотографируем, маркируем и готовим к отправке. Всё под контролем.', dark: true },
+    { em: '🛒', anim: 'a-wiggle', t: 'Выкуп товара', d: 'Найдём поставщика, проверим качество и выкупим товар за вас. Вам не нужно знать китайский и лететь на фабрику.', dark: false },
+    { em: '🤝', anim: 'a-pulse', t: 'Сопровождение в Китае', d: 'Встретим, переведём, поможем на переговорах и на производстве. Ваш человек на месте, когда нужно.', dark: true },
   ];
   return (
     <section className="pd-section pd-services" id="uslugi">
       <div className="pd-svc-bg">
-        <img className="pd-svc-port" src="../../assets/hero-port.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" data-parallax="0.08" />
+        <img className="pd-svc-port" src="../../assets/hero-port.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" data-parallax="0.08" />
         <svg className="pd-svc-route" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
           <path d="M250,150 C400,60 560,250 760,150" fill="none" stroke="#DE2931" strokeWidth="2" strokeDasharray="2 9" strokeLinecap="round"/>
         </svg>
@@ -25,8 +25,8 @@ function Services() {
         <div className="pd-head">
           <span className="pd-kicker">Услуги PanDao</span>
           <h2>Наши услуги</h2>
-          <p>Мы не просто передаём груз дальше. Мы строим маршрут, контролируем склад,
-            упаковку, документы и доводим поставку до результата.</p>
+          <p>Мы не перекладываем груз с рук на руки и не теряемся на полпути. Строим маршрут,
+            держим склад, упаковку и документы под контролем — и доводим поставку до результата.</p>
         </div>
         <div className="pd-grid3">
           {serv.map((s, i) => (
@@ -39,16 +39,6 @@ function Services() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="pd-rchip">
-          <span className="ic"><Icon name="map-pin" /></span>
-          <span>Маршруты: <span className="ar">Китай</span> <span className="ar">→</span>
-            <span className="muted"> Грозный / Пятигорск / Махачкала / Минеральные Воды</span></span>
-          <span className="pd-rchip-sep"></span>
-          <span className="pd-rchip-right">
-            <span className="ic"><Icon name="calendar-days" /></span>
-            <span className="muted">Регулярные рейсы и гибкие сроки доставки</span>
-          </span>
         </div>
       </div>
     </section>

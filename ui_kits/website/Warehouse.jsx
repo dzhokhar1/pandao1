@@ -15,11 +15,11 @@ function Warehouse() {
     { ic: 'shield-check', big: '0', sub: 'потерянных грузов за 5 лет работы' },
   ];
   const proc = [
-    { img: '01', no: '01', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая' },
-    { img: '02', no: '02', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа' },
-    { img: '03', no: '03', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу' },
-    { img: '04', no: '04', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков' },
-    { img: '05', no: '05', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ' },
+    { ic: 'package-check', no: '01', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая' },
+    { ic: 'search-check', no: '02', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа' },
+    { ic: 'package', no: '03', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу' },
+    { ic: 'warehouse', no: '04', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков' },
+    { ic: 'truck', no: '05', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ' },
   ];
   return (
     <section className="pd-section pd-wh-section">
@@ -52,7 +52,7 @@ function Warehouse() {
           <div className="pd-wh-photo pd-wh-live">
             {!playing ? (
               <button type="button" className="pd-live-frame" onClick={() => setPlaying(true)} aria-label="Смотреть прямую трансляцию">
-                <img src="../../assets/warehouse.jpg" alt="Прямая трансляция со склада PanDao" width="1400" height="957" loading="lazy" decoding="async" />
+                <img src="../../assets/warehouse.webp" alt="Прямая трансляция со склада PanDao" width="1400" height="957" loading="lazy" decoding="async" />
                 <span className="pd-live-scrim"></span>
                 <span className="pd-live-badge"><span className="dot"></span>Прямая трансляция со склада PanDao</span>
                 <span className="pd-live-play"><Icon name="play" /></span>
@@ -68,8 +68,7 @@ function Warehouse() {
             <div className="pd-wh-stats">
               {whstats.map((s, i) => (
                 <div className="c" key={i}>
-                  <div className="ic"><Icon name={s.ic} /></div>
-                  <div className="big">{s.big}</div>
+                  <div className="pd-wh-top"><span className="ic"><Icon name={s.ic} /></span><span className="big">{s.big}</span></div>
                   <div className="sub">{s.sub}</div>
                 </div>
               ))}
@@ -84,7 +83,7 @@ function Warehouse() {
               <React.Fragment key={i}>
                 {i > 0 && <div className="pd-proc-arrow"><Icon name="arrow-right" /></div>}
                 <div className="step">
-                  <div className="ph"><img src={`../../assets/proc-${p.img}.jpg`} alt={p.tt} width="640" height="480" loading="lazy" decoding="async" /></div>
+                  <div className="ph"><span className="pd-proc-ic"><Icon name={p.ic} /></span><span className="pd-proc-wm">{p.no}</span></div>
                   <div className="no">{p.no}</div>
                   <div className="tt">{p.tt}</div>
                   <div className="dd">{p.dd}</div>
