@@ -2,17 +2,17 @@
 function Services() {
   React.useEffect(() => { window.lucide && lucide.createIcons(); }, []);
   const serv = [
-    { ic: 'key-round', t: 'Доставка под ключ', d: 'От приёмки груза в Китае до доставки на Северный Кавказ.', dark: false },
-    { ic: 'container', t: 'Контейнерные перевозки', d: 'Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.', dark: true },
-    { ic: 'boxes', t: 'Сборные грузы', d: 'Объединяем грузы клиентов, чтобы снизить стоимость перевозки.', dark: false },
-    { ic: 'warehouse', t: 'Склад в Китае', d: 'Принимаем, проверяем, маркируем и готовим груз к отправке.', dark: true },
-    { ic: 'shopping-cart', t: 'Байерские услуги', d: 'Помогаем найти, проверить и выкупить товар в Китае.', dark: false },
-    { ic: 'users', t: 'Сопровождение в Китае', d: 'Встречаем, переводим, ведём переговоры и помогаем с фабриками.', dark: true },
+    { em: '🗝️', anim: 'a-swing', t: 'Доставка под ключ', d: 'От приёмки груза в Китае до доставки на Северный Кавказ.', dark: false },
+    { em: '🚢', anim: 'a-float', t: 'Контейнерные перевозки', d: 'Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.', dark: true },
+    { em: '📦', anim: 'a-bounce', t: 'Сборные грузы', d: 'Объединяем грузы клиентов, чтобы снизить стоимость перевозки.', dark: false },
+    { em: '🏭', anim: 'a-pulse', t: 'Склад в Китае', d: 'Принимаем, проверяем, маркируем и готовим груз к отправке.', dark: true },
+    { em: '🛒', anim: 'a-wiggle', t: 'Байерские услуги', d: 'Помогаем найти, проверить и выкупить товар в Китае.', dark: false },
+    { em: '🤝', anim: 'a-pulse', t: 'Сопровождение в Китае', d: 'Встречаем, переводим, ведём переговоры и помогаем с фабриками.', dark: true },
   ];
   return (
-    <section className="pd-section pd-services">
+    <section className="pd-section pd-services" id="uslugi">
       <div className="pd-svc-bg">
-        <img className="pd-svc-port" src="../../assets/hero-port.png" alt="" aria-hidden="true" />
+        <img className="pd-svc-port" src="../../assets/hero-port.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" data-parallax="0.08" />
         <svg className="pd-svc-route" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
           <path d="M250,150 C400,60 560,250 760,150" fill="none" stroke="#DE2931" strokeWidth="2" strokeDasharray="2 9" strokeLinecap="round"/>
         </svg>
@@ -31,7 +31,7 @@ function Services() {
         <div className="pd-grid3">
           {serv.map((s, i) => (
             <div key={i} className={"pd-card pd-serv " + (s.dark ? "pd-card--dark" : "pd-card--light")}>
-              <span className="chip"><Icon name={s.ic} /></span>
+              <span className="chip"><span className={"pd-emoji " + s.anim}>{s.em}</span></span>
               <div className="pd-serv-body">
                 <h3>{s.t}</h3>
                 <span className="pd-serv-line"></span>

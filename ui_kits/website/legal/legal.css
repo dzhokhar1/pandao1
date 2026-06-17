@@ -1,0 +1,38 @@
+/* Legal / document pages — PanDao. Imports brand tokens. */
+@import url('../../../colors_and_type.css');
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:#FCFBF9;font-family:var(--pd-font);color:var(--pd-ink);-webkit-font-smoothing:antialiased;}
+
+.lg-header{position:sticky;top:0;z-index:10;background:rgba(252,251,249,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--pd-line);}
+.lg-header-in{max-width:920px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.lg-header img{height:38px;display:block;}
+.lg-back{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;color:var(--pd-ink);text-decoration:none;transition:color .15s;}
+.lg-back:hover{color:var(--pd-red);}
+.lg-back svg{width:18px;height:18px;}
+
+.lg-wrap{max-width:920px;margin:0 auto;padding:64px 28px 96px;}
+.lg-kicker{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--pd-red);display:inline-flex;align-items:center;gap:14px;}
+.lg-kicker::before{content:"";width:34px;height:3px;background:var(--pd-red);border-radius:2px;}
+.lg-wrap h1{font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 0;text-wrap:balance;}
+.lg-meta{font-size:14px;color:var(--pd-faint);margin-top:16px;}
+.lg-divider{width:64px;height:4px;background:var(--pd-red);border-radius:2px;margin:26px 0 40px;}
+
+.lg-wrap h2{font-weight:800;font-size:24px;letter-spacing:-.01em;margin:44px 0 14px;color:var(--pd-ink);}
+.lg-wrap h3{font-weight:700;font-size:18px;margin:28px 0 10px;color:var(--pd-ink);}
+.lg-wrap p{font-size:16px;line-height:1.7;color:var(--pd-ink-2);margin:0 0 14px;}
+.lg-wrap ul{margin:0 0 18px;padding-left:22px;}
+.lg-wrap li{font-size:16px;line-height:1.7;color:var(--pd-ink-2);margin-bottom:8px;}
+.lg-wrap a{color:var(--pd-red);font-weight:600;text-decoration:none;}
+.lg-wrap a:hover{text-decoration:underline;}
+.lg-wrap strong{color:var(--pd-ink);font-weight:700;}
+
+.lg-card{background:var(--pd-white);border:1px solid var(--pd-line);border-radius:var(--pd-r-lg);padding:26px 30px;margin:24px 0;box-shadow:var(--pd-shadow-sm);}
+.lg-card p:last-child{margin-bottom:0;}
+
+.lg-foot{max-width:920px;margin:0 auto;padding:0 28px 64px;}
+.lg-foot-in{border-top:1px solid var(--pd-line);padding-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;}
+.lg-foot-in a{font-size:14px;color:var(--pd-muted);text-decoration:none;}
+.lg-foot-in a:hover{color:var(--pd-red);}
+.lg-foot-copy{font-size:13px;color:var(--pd-faint);width:100%;margin-top:8px;}

@@ -35,13 +35,14 @@ function Facts() {
     return () => window.removeEventListener('scroll', trig);
   }, []);
 
+  const fmt = (n) => n.toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
   const ledger = [
-    { ic: 'kg', num: '100 кг+', lab: 'минимальный вес груза для работы' },
-    { ic: 'boxes', num: '5 тонн+', lab: 'индивидуальные условия для крупных партий' },
+    { ic: 'kg', count: 100, unit: ' кг+', lab: 'минимальный вес груза для работы' },
+    { ic: 'weight', count: 5, unit: ' тонн+', lab: 'индивидуальные условия для крупных партий' },
   ];
   const losses = [
-    { ic: 'shield-check', num: '600 кг', lab: 'утерянного груза полностью возместили клиентам' },
-    { ic: 'package-check', num: '1000+ товаров', lab: 'повреждено в дороге — ущерб закрыли за свой счёт' },
+    { ic: 'shield-check', count: 600, unit: ' кг', lab: 'утерянного груза полностью возместили клиентам' },
+    { ic: 'package-check', count: 1000, unit: '+ товаров', lab: 'повреждено в дороге — ущерб закрыли за свой счёт' },
   ];
 
   return (
@@ -66,20 +67,20 @@ function Facts() {
           {/* image stack */}
           <div className="pd-fc3-stack reveal">
             <div className="pd-fc3-img-main">
-              <img src="../../assets/hero-port.png" alt="Контейнерный порт PanDao" />
+              <img src="../../assets/hero-port.jpg" alt="Контейнерный порт PanDao" width="1500" height="844" loading="lazy" decoding="async" data-parallax="0.14" />
               <span className="pd-fc3-coord">43.2389° N<br/>45.7560° E</span>
               <span className="pd-fc3-cross"></span>
               <div className="pd-fc3-flag">
                 <span className="chip"><Icon name="container" /></span>
                 <div>
-                  <div className="num">1 275 000<span className="u">+ кг</span></div>
+                  <div className="num"><span className="cu" data-count="1275000" data-dur="2000">{fmt(1275000)}</span><span className="u">+ кг</span></div>
                   <div className="lab">успешно доставленных товаров</div>
                 </div>
               </div>
             </div>
             <div className="pd-fc3-img-sub">
-              <img src="../../assets/warehouse.png" alt="Склад PanDao в Китае" />
-              <div className="pd-fc3-subchip"><span className="dot"></span>1 200+ клиентов</div>
+              <img src="../../assets/warehouse.jpg" alt="Склад PanDao в Китае" width="1400" height="957" loading="lazy" decoding="async" data-parallax="0.2" />
+              <div className="pd-fc3-subchip"><span className="dot"></span><span className="cu" data-count="1200" data-dur="1800">{fmt(1200)}</span>+ клиентов</div>
             </div>
             <span className="pd-fc3-ping"></span>
           </div>
@@ -90,7 +91,7 @@ function Facts() {
               <div className="pd-fc3-row reveal" key={i}>
                 <span className="chip">{r.ic === 'kg' ? <KgIconF /> : <Icon name={r.ic} />}</span>
                 <div className="pd-fc3-rowtext">
-                  <div className="num">{r.num}</div>
+                  <div className="num"><span className="cu" data-count={r.count} data-dur="1500">{fmt(r.count)}</span>{r.unit}</div>
                   <div className="lab">{r.lab}</div>
                 </div>
               </div>
@@ -100,7 +101,7 @@ function Facts() {
               <div className="pd-fc3-row pd-fc3-row--loss reveal" key={i}>
                 <span className="chip">{r.ic === 'kg' ? <KgIconF /> : <Icon name={r.ic} />}</span>
                 <div className="pd-fc3-rowtext">
-                  <div className="num">{r.num}</div>
+                  <div className="num"><span className="cu" data-count={r.count} data-dur="1500">{fmt(r.count)}</span>{r.unit}</div>
                   <div className="lab">{r.lab}</div>
                 </div>
               </div>

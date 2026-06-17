@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/Decor.jsx":"99c5b570373f","ui_kits/website/Facts.jsx":"997565dd0e12","ui_kits/website/Footer.jsx":"39cee844dad9","ui_kits/website/Header.jsx":"d68bc4b8ebf4","ui_kits/website/Hero.jsx":"d6e2e0a08d39","ui_kits/website/Results.jsx":"cb2cbcb15e46","ui_kits/website/Services.jsx":"9269ad3270cd","ui_kits/website/Warehouse.jsx":"2d77ce22b744"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/ContactModal.jsx":"946243f5f501","ui_kits/website/Contacts.jsx":"3c2602d315f0","ui_kits/website/CookieBanner.jsx":"1deb4680557a","ui_kits/website/Decor.jsx":"99c5b570373f","ui_kits/website/Facts.jsx":"8081e98882d5","ui_kits/website/Faq.jsx":"ccef29df3d97","ui_kits/website/Footer.jsx":"5b4d11197fd8","ui_kits/website/Header.jsx":"eecc813b583d","ui_kits/website/Hero.jsx":"0dc3db5afc70","ui_kits/website/Services.jsx":"1ccdd72496cb","ui_kits/website/SiteChrome.jsx":"9941ce7e9e8b","ui_kits/website/Warehouse.jsx":"eee2d778527a","ui_kits/website/effects.js":"399b95f31efd"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -7,6 +7,353 @@ const __ds_ns = (window.PanDaoDesignSystem_7d45b9 = window.PanDaoDesignSystem_7d
 const __ds_scope = {};
 
 (__ds_ns.__errors = __ds_ns.__errors || []);
+
+// ui_kits/website/ContactModal.jsx
+try { (() => {
+// Contact form modal — opened by any "Рассчитать доставку" button via the
+// global 'pd-open-form' event. Fields: имя + телефон + consent checkbox.
+function ContactModal() {
+  const [open, setOpen] = React.useState(false);
+  const [sent, setSent] = React.useState(false);
+  const [name, setName] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [agree, setAgree] = React.useState(false);
+  const [touched, setTouched] = React.useState(false);
+  React.useEffect(() => {
+    const onOpen = () => {
+      setOpen(true);
+      setSent(false);
+      setTouched(false);
+    };
+    window.addEventListener('pd-open-form', onOpen);
+    const onKey = e => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('pd-open-form', onOpen);
+      window.removeEventListener('keydown', onKey);
+    };
+  }, []);
+  React.useEffect(() => {
+    window.lucide && lucide.createIcons();
+  }, [open, sent]);
+  React.useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+  }, [open]);
+  if (!open) return null;
+  const fmtPhone = raw => {
+    let d = raw.replace(/\D/g, '');
+    if (d.startsWith('8')) d = '7' + d.slice(1);
+    if (!d.startsWith('7')) d = '7' + d;
+    d = d.slice(0, 11);
+    let out = '+7';
+    if (d.length > 1) out += ' (' + d.slice(1, 4);
+    if (d.length >= 4) out += ') ' + d.slice(4, 7);
+    if (d.length >= 7) out += '-' + d.slice(7, 9);
+    if (d.length >= 9) out += '-' + d.slice(9, 11);
+    return out;
+  };
+  const valid = name.trim().length > 1 && phone.replace(/\D/g, '').length === 11 && agree;
+  const submit = e => {
+    e.preventDefault();
+    setTouched(true);
+    if (valid) setSent(true);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "pd-modal-overlay",
+    onClick: () => setOpen(false)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-modal",
+    onClick: e => e.stopPropagation(),
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "pd-modal-close",
+    onClick: () => setOpen(false),
+    "aria-label": "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "x"
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "pd-modal-grid",
+    "aria-hidden": "true"
+  }), !sent ? /*#__PURE__*/React.createElement("div", {
+    className: "pd-modal-in"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-kicker"
+  }, "\u0417\u0430\u044F\u0432\u043A\u0430 PanDao"), /*#__PURE__*/React.createElement("h3", {
+    className: "pd-modal-title"
+  }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443"), /*#__PURE__*/React.createElement("p", {
+    className: "pd-modal-lead"
+  }, "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B \u2014 \u043B\u043E\u0433\u0438\u0441\u0442 \u0441\u0432\u044F\u0436\u0435\u0442\u0441\u044F \u0441 \u0432\u0430\u043C\u0438, \u0443\u0442\u043E\u0447\u043D\u0438\u0442 \u0434\u0435\u0442\u0430\u043B\u0438 \u0433\u0440\u0443\u0437\u0430 \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u043C\u0430\u0440\u0448\u0440\u0443\u0442 \u0438\u0437 \u041A\u0438\u0442\u0430\u044F \u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437."), /*#__PURE__*/React.createElement("form", {
+    className: "pd-form",
+    onSubmit: submit,
+    noValidate: true
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "pd-field"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-field-lab"
+  }, "\u0412\u0430\u0448\u0435 \u0438\u043C\u044F"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: name,
+    onChange: e => setName(e.target.value),
+    placeholder: "\u041A\u0430\u043A \u043A \u0432\u0430\u043C \u043E\u0431\u0440\u0430\u0449\u0430\u0442\u044C\u0441\u044F",
+    className: touched && name.trim().length < 2 ? 'err' : ''
+  })), /*#__PURE__*/React.createElement("label", {
+    className: "pd-field"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-field-lab"
+  }, "\u0422\u0435\u043B\u0435\u0444\u043E\u043D"), /*#__PURE__*/React.createElement("input", {
+    type: "tel",
+    value: phone,
+    onChange: e => setPhone(fmtPhone(e.target.value)),
+    placeholder: "+7 (___) ___-__-__",
+    className: touched && phone.replace(/\D/g, '').length !== 11 ? 'err' : ''
+  })), /*#__PURE__*/React.createElement("label", {
+    className: "pd-check" + (touched && !agree ? ' err' : '')
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: agree,
+    onChange: e => setAgree(e.target.checked)
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "pd-check-box"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check"
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "pd-check-lab"
+  }, "\u0421\u043E\u0433\u043B\u0430\u0441\u0435\u043D \u0441 ", /*#__PURE__*/React.createElement("a", {
+    href: "legal/privacy.html",
+    target: "_blank",
+    rel: "noopener"
+  }, "\u043F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"))), /*#__PURE__*/React.createElement("button", {
+    type: "submit",
+    className: "pd-btn pd-btn--primary pd-form-submit" + (valid ? '' : ' is-off')
+  }, "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right"
+  })), /*#__PURE__*/React.createElement("p", {
+    className: "pd-form-note"
+  }, "\u041D\u0430\u0436\u0438\u043C\u0430\u044F \xAB\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C\xBB, \u0432\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u043D\u0430 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0443 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445 \u0441\u043E\u0433\u043B\u0430\u0441\u043D\u043E 152-\u0424\u0417."))) : /*#__PURE__*/React.createElement("div", {
+    className: "pd-modal-in pd-modal-done"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-done-ic"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check"
+  })), /*#__PURE__*/React.createElement("h3", {
+    className: "pd-modal-title"
+  }, "\u0417\u0430\u044F\u0432\u043A\u0430 \u043F\u0440\u0438\u043D\u044F\u0442\u0430"), /*#__PURE__*/React.createElement("p", {
+    className: "pd-modal-lead"
+  }, "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, ", name.trim().split(' ')[0] || 'друг', "! \u041B\u043E\u0433\u0438\u0441\u0442 PanDao \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u0442 \u0432\u0430\u043C \u0432 \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u043F\u043E \u043D\u043E\u043C\u0435\u0440\u0443 ", phone, "."), /*#__PURE__*/React.createElement("button", {
+    className: "pd-btn pd-btn--ghost",
+    onClick: () => setOpen(false)
+  }, "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"))));
+}
+Object.assign(window, {
+  ContactModal
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/ContactModal.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/website/Contacts.jsx
+try { (() => {
+// Brand SVG icons for messengers (native marks, single-color on dark).
+function WhatsAppIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 32 32",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
+    d: "M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 2.12.6 4.1 1.64 5.8L5 28l7.36-1.62a11 11 0 0 0 3.68.64h.01c6.08 0 11.02-4.94 11.02-11.02C27.07 8.94 22.12 4 16.04 4Zm0 20.18h-.01c-1.1 0-2.18-.3-3.12-.86l-.22-.13-3.7.97.99-3.61-.15-.23a8.97 8.97 0 0 1-1.38-4.78c0-4.96 4.04-9 9-9 2.4 0 4.66.94 6.36 2.64a8.94 8.94 0 0 1 2.64 6.36c0 4.96-4.04 9-8.99 9Zm4.94-6.73c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.8-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.84.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+  }));
+}
+function TelegramIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 32 32",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
+    d: "M16 4C9.37 4 4 9.37 4 16s5.37 12 12 12 12-5.37 12-12S22.63 4 16 4Zm5.57 8.2-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12l-6.51 4.1-2.81-.88c-.61-.19-.62-.61.13-.9l10.98-4.23c.51-.19.96.12.79.86Z"
+  }));
+}
+function Contacts() {
+  React.useEffect(() => {
+    window.lucide && lucide.createIcons();
+  }, []);
+  const items = [{
+    ic: 'phone',
+    lab: 'Телефон',
+    val: '+7 (928) 000-00-00',
+    href: 'tel:+79280000000'
+  }, {
+    ic: 'mail',
+    lab: 'Почта',
+    val: 'info@pandao.example',
+    href: 'mailto:info@pandao.example'
+  }, {
+    ic: 'map-pin',
+    lab: 'Склад в Китае',
+    val: 'г. Гуанчжоу, район Байюнь',
+    href: null
+  }, {
+    ic: 'clock',
+    lab: 'Часы работы',
+    val: 'Пн–Сб · 9:00–20:00 (МСК)',
+    href: null
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    className: "pd-section pd-contacts",
+    id: "contacts"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-ct-grid",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("svg", {
+    className: "pd-ct-route",
+    viewBox: "0 0 1200 300",
+    preserveAspectRatio: "none",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M40,210 C300,80 520,250 760,140 S1080,60 1180,120",
+    fill: "none",
+    stroke: "#DE2931",
+    strokeWidth: "1.5",
+    strokeDasharray: "2 10",
+    strokeLinecap: "round",
+    opacity: "0.5"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "pd-wrap pd-ct-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-left"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-kicker"
+  }, "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"), /*#__PURE__*/React.createElement("h2", null, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u043C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443", /*#__PURE__*/React.createElement("br", null), "\u0432\u0430\u0448\u0435\u0433\u043E \u0433\u0440\u0443\u0437\u0430"), /*#__PURE__*/React.createElement("span", {
+    className: "pd-divider"
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "pd-ct-lead"
+  }, "\u0421\u0432\u044F\u0436\u0438\u0442\u0435\u0441\u044C \u0443\u0434\u043E\u0431\u043D\u044B\u043C \u0441\u043F\u043E\u0441\u043E\u0431\u043E\u043C \u2014 \u043B\u043E\u0433\u0438\u0441\u0442 \u043D\u0430 \u0441\u0432\u044F\u0437\u0438 \u0432 \u043C\u0435\u0441\u0441\u0435\u043D\u0434\u0436\u0435\u0440\u0430\u0445 \u0438 \u043F\u043E \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443. \u041E\u0442\u0432\u0435\u0442\u0438\u043C, \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u043C \u043C\u0430\u0440\u0448\u0440\u0443\u0442 \u0438 \u0441\u0440\u043E\u043A\u0438 \u0438\u0437 \u041A\u0438\u0442\u0430\u044F \u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437."), /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-grid-items"
+  }, items.map((it, i) => {
+    const inner = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "ic"
+    }, /*#__PURE__*/React.createElement("i", {
+      "data-lucide": it.ic
+    })), /*#__PURE__*/React.createElement("span", {
+      className: "pd-ct-txt"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "l"
+    }, it.lab), /*#__PURE__*/React.createElement("span", {
+      className: "v"
+    }, it.val)));
+    return it.href ? /*#__PURE__*/React.createElement("a", {
+      className: "pd-ct-item",
+      key: i,
+      href: it.href
+    }, inner) : /*#__PURE__*/React.createElement("div", {
+      className: "pd-ct-item",
+      key: i
+    }, inner);
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-msgs"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "pd-msg pd-msg--wa",
+    href: "https://wa.me/79280000000",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/React.createElement(WhatsAppIcon, null), " WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    className: "pd-msg pd-msg--tg",
+    href: "https://t.me/pandao",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/React.createElement(TelegramIcon, null), " Telegram"))), /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-card-top"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-ct-badge"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dot"
+  }), "\u041D\u0430 \u0441\u0432\u044F\u0437\u0438 \u0441\u0435\u0439\u0447\u0430\u0441"), /*#__PURE__*/React.createElement("h3", null, "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0437\u0430\u044F\u0432\u043A\u0443"), /*#__PURE__*/React.createElement("p", null, "\u041F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 15 \u043C\u0438\u043D\u0443\u0442 \u0432 \u0440\u0430\u0431\u043E\u0447\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u043C \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C.")), /*#__PURE__*/React.createElement("button", {
+    className: "pd-btn pd-btn--primary pd-ct-cta",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
+  }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "arrow-right"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-route-mini"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ar"
+  }, "\u041A\u0438\u0442\u0430\u0439"), /*#__PURE__*/React.createElement("span", {
+    className: "line"
+  }), /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "plane"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "line"
+  }), /*#__PURE__*/React.createElement("span", null, "\u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437")), /*#__PURE__*/React.createElement("div", {
+    className: "pd-ct-cities"
+  }, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439 \xB7 \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A \xB7 \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430 \xB7 \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B"))));
+}
+Object.assign(window, {
+  Contacts
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Contacts.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/website/CookieBanner.jsx
+try { (() => {
+// Cookie consent banner — shown on first visit (per 152-ФЗ / Roskomnadzor guidance).
+// Stores acceptance in localStorage; links to the cookie policy page.
+function CookieBanner() {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    let agreed = false;
+    try {
+      agreed = localStorage.getItem('pd-cookie-consent') === '1';
+    } catch (e) {}
+    if (!agreed) {
+      const t = setTimeout(() => setShow(true), 700);
+      return () => clearTimeout(t);
+    }
+  }, []);
+  React.useEffect(() => {
+    if (show) window.lucide && lucide.createIcons();
+  }, [show]);
+  const accept = () => {
+    try {
+      localStorage.setItem('pd-cookie-consent', '1');
+    } catch (e) {}
+    setShow(false);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "pd-cookie" + (show ? " in" : ""),
+    role: "dialog",
+    "aria-label": "\u0424\u0430\u0439\u043B\u044B cookie"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-cookie-ic"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "cookie"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "pd-cookie-text"
+  }, /*#__PURE__*/React.createElement("span", null, "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u044F \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F \u0441\u0430\u0439\u0442\u043E\u043C, \u0432\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u043E\u0439 cookie \u0438 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 ", /*#__PURE__*/React.createElement("a", {
+    href: "legal/cookies.html",
+    target: "_blank",
+    rel: "noopener"
+  }, "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F cookie"), " \u0438 ", /*#__PURE__*/React.createElement("a", {
+    href: "legal/privacy.html",
+    target: "_blank",
+    rel: "noopener"
+  }, "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"), ".")), /*#__PURE__*/React.createElement("div", {
+    className: "pd-cookie-actions"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "pd-cookie-more",
+    href: "legal/cookies.html",
+    target: "_blank",
+    rel: "noopener"
+  }, "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435"), /*#__PURE__*/React.createElement("button", {
+    className: "pd-btn pd-btn--primary pd-btn--sm",
+    onClick: accept
+  }, "\u041F\u0440\u0438\u043D\u044F\u0442\u044C")));
+}
+Object.assign(window, {
+  CookieBanner
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/CookieBanner.jsx", error: String((e && e.message) || e) }); }
 
 // ui_kits/website/Decor.jsx
 try { (() => {
@@ -146,22 +493,27 @@ function Facts() {
     });
     return () => window.removeEventListener('scroll', trig);
   }, []);
+  const fmt = n => n.toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
   const ledger = [{
     ic: 'kg',
-    num: '100 кг+',
+    count: 100,
+    unit: ' кг+',
     lab: 'минимальный вес груза для работы'
   }, {
-    ic: 'boxes',
-    num: '5 тонн+',
+    ic: 'weight',
+    count: 5,
+    unit: ' тонн+',
     lab: 'индивидуальные условия для крупных партий'
   }];
   const losses = [{
     ic: 'shield-check',
-    num: '600 кг',
+    count: 600,
+    unit: ' кг',
     lab: 'утерянного груза полностью возместили клиентам'
   }, {
     ic: 'package-check',
-    num: '1000+ товаров',
+    count: 1000,
+    unit: '+ товаров',
     lab: 'повреждено в дороге — ущерб закрыли за свой счёт'
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -199,8 +551,13 @@ function Facts() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-img-main"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/hero-port.png",
-    alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao"
+    src: "../../assets/hero-port.jpg",
+    alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao",
+    width: "1500",
+    height: "844",
+    loading: "lazy",
+    decoding: "async",
+    "data-parallax": "0.14"
   }), /*#__PURE__*/React.createElement("span", {
     className: "pd-fc3-coord"
   }, "43.2389\xB0 N", /*#__PURE__*/React.createElement("br", null), "45.7560\xB0 E"), /*#__PURE__*/React.createElement("span", {
@@ -213,20 +570,33 @@ function Facts() {
     name: "container"
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "num"
-  }, "1 275 000", /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "cu",
+    "data-count": "1275000",
+    "data-dur": "2000"
+  }, fmt(1275000)), /*#__PURE__*/React.createElement("span", {
     className: "u"
   }, "+ \u043A\u0433")), /*#__PURE__*/React.createElement("div", {
     className: "lab"
   }, "\u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0442\u043E\u0432\u0430\u0440\u043E\u0432")))), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-img-sub"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/warehouse.png",
-    alt: "\u0421\u043A\u043B\u0430\u0434 PanDao \u0432 \u041A\u0438\u0442\u0430\u0435"
+    src: "../../assets/warehouse.jpg",
+    alt: "\u0421\u043A\u043B\u0430\u0434 PanDao \u0432 \u041A\u0438\u0442\u0430\u0435",
+    width: "1400",
+    height: "957",
+    loading: "lazy",
+    decoding: "async",
+    "data-parallax": "0.2"
   }), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-subchip"
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), "1 200+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432")), /*#__PURE__*/React.createElement("span", {
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "cu",
+    "data-count": "1200",
+    "data-dur": "1800"
+  }, fmt(1200)), "+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432")), /*#__PURE__*/React.createElement("span", {
     className: "pd-fc3-ping"
   })), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-ledger"
@@ -241,7 +611,11 @@ function Facts() {
     className: "pd-fc3-rowtext"
   }, /*#__PURE__*/React.createElement("div", {
     className: "num"
-  }, r.num), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "cu",
+    "data-count": r.count,
+    "data-dur": "1500"
+  }, fmt(r.count)), r.unit), /*#__PURE__*/React.createElement("div", {
     className: "lab"
   }, r.lab)))), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-losslabel reveal"
@@ -260,7 +634,11 @@ function Facts() {
     className: "pd-fc3-rowtext"
   }, /*#__PURE__*/React.createElement("div", {
     className: "num"
-  }, r.num), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "cu",
+    "data-count": r.count,
+    "data-dur": "1500"
+  }, fmt(r.count)), r.unit), /*#__PURE__*/React.createElement("div", {
     className: "lab"
   }, r.lab))))))));
 }
@@ -268,6 +646,80 @@ Object.assign(window, {
   Facts
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Facts.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/website/Faq.jsx
+try { (() => {
+// FAQ — premium accordion. One open at a time; smooth height animation via max-height.
+function Faq() {
+  const [open, setOpen] = React.useState(0);
+  React.useEffect(() => {
+    window.lucide && lucide.createIcons();
+  }, [open]);
+  const items = [{
+    q: 'За какой срок доставите груз из Китая на Северный Кавказ?',
+    a: 'Сроки зависят от маршрута и типа перевозки. В среднем сборные грузы идут 18–30 дней, контейнерные — от 25 дней. Точный срок логист называет при расчёте, учитывая ваш город и характер груза.'
+  }, {
+    q: 'С каким минимальным весом вы работаете?',
+    a: 'Работаем с грузами от 100 кг. Для небольших партий выгодны сборные отправки — объединяем грузы нескольких клиентов в один контейнер, чтобы снизить стоимость.'
+  }, {
+    q: 'Как происходит оплата и расчёт стоимости?',
+    a: 'Стоимость рассчитывается индивидуально по весу, объёму, типу груза и городу назначения. Мы даём честный расчёт до отправки — без скрытых платежей. Для крупных партий от 5 тонн действуют индивидуальные цены.'
+  }, {
+    q: 'Что будет, если груз повредят или потеряют?',
+    a: 'Каждый груз застрахован и находится под нашей ответственностью. Если что-то пойдёт не по плану — мы возмещаем ущерб за свой счёт. Это наша принципиальная позиция: отвечаем за каждый груз.'
+  }, {
+    q: 'Можно ли отследить груз и склад?',
+    a: 'Да. По приёмке груза на склад в Китае мы отправляем фото- и видеоотчёт в рабочий чат. На сайте доступна прямая трансляция со склада, а статус груза вы видите на каждом этапе маршрута.'
+  }, {
+    q: 'Помогаете ли с выкупом товара в Китае?',
+    a: 'Да, оказываем байерские услуги: находим, проверяем и выкупаем товар, ведём переговоры с фабриками и сопровождаем сделку. Вам не нужно лететь в Китай — мы закрываем весь цикл.'
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    className: "pd-section pd-faq",
+    id: "faq"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-faq-cross",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "pd-wrap pd-faq-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-faq-aside"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-kicker"
+  }, "\u0412\u043E\u043F\u0440\u043E\u0441\u044B \u0438 \u043E\u0442\u0432\u0435\u0442\u044B"), /*#__PURE__*/React.createElement("h2", null, "\u0427\u0430\u0441\u0442\u044B\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B", /*#__PURE__*/React.createElement("br", null), "\u043E \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435"), /*#__PURE__*/React.createElement("span", {
+    className: "pd-divider"
+  }), /*#__PURE__*/React.createElement("p", null, "\u041D\u0435 \u043D\u0430\u0448\u043B\u0438 \u043E\u0442\u0432\u0435\u0442? \u041B\u043E\u0433\u0438\u0441\u0442 PanDao \u043E\u0442\u0432\u0435\u0442\u0438\u0442 \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u0432\u043E\u043F\u0440\u043E\u0441 \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u043F\u043E\u0434 \u0432\u0430\u0448 \u0433\u0440\u0443\u0437."), /*#__PURE__*/React.createElement("button", {
+    className: "pd-btn pd-btn--primary",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
+  }, "\u0417\u0430\u0434\u0430\u0442\u044C \u0432\u043E\u043F\u0440\u043E\u0441 ", /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "arrow-right"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "pd-faq-list"
+  }, items.map((it, i) => /*#__PURE__*/React.createElement("div", {
+    className: "pd-faq-item" + (open === i ? " open" : ""),
+    key: i
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "pd-faq-q",
+    onClick: () => setOpen(open === i ? -1 : i),
+    "aria-expanded": open === i
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-faq-qnum"
+  }, String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("span", {
+    className: "pd-faq-qtext"
+  }, it.q), /*#__PURE__*/React.createElement("span", {
+    className: "pd-faq-qchev"
+  }, /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "plus"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "pd-faq-a"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-faq-a-in"
+  }, /*#__PURE__*/React.createElement("p", null, it.a))))))));
+}
+Object.assign(window, {
+  Faq
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Faq.jsx", error: String((e && e.message) || e) }); }
 
 // ui_kits/website/Footer.jsx
 try { (() => {
@@ -316,7 +768,15 @@ function Footer() {
     href: "#"
   }, "\u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430"), /*#__PURE__*/React.createElement("a", {
     href: "#"
-  }, "\u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B")))), /*#__PURE__*/React.createElement("div", {
+  }, "\u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
+    href: "legal/privacy.html"
+  }, "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "legal/consent.html"
+  }, "\u0421\u043E\u0433\u043B\u0430\u0441\u0438\u0435 \u043D\u0430 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0443 \u041F\u0414\u043D"), /*#__PURE__*/React.createElement("a", {
+    href: "legal/cookies.html"
+  }, "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 cookie"), /*#__PURE__*/React.createElement("a", {
+    href: "legal/terms.html"
+  }, "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435")))), /*#__PURE__*/React.createElement("div", {
     className: "bottom"
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 PanDao Logistics Company"), /*#__PURE__*/React.createElement("span", null, "\u041A\u0438\u0442\u0430\u0439 \u2192 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"))));
 }
@@ -348,7 +808,8 @@ function Header() {
     key: l,
     href: "#"
   }, l))), /*#__PURE__*/React.createElement("button", {
-    className: "pd-btn pd-btn--primary pd-btn--sm"
+    className: "pd-btn pd-btn--primary pd-btn--sm",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443"), /*#__PURE__*/React.createElement("button", {
     className: "pd-burger",
     onClick: () => setOpen(true),
@@ -375,7 +836,10 @@ function Header() {
     onClick: () => setOpen(false)
   }, l)), /*#__PURE__*/React.createElement("button", {
     className: "pd-btn pd-btn--primary",
-    onClick: () => setOpen(false)
+    onClick: () => {
+      setOpen(false);
+      window.dispatchEvent(new CustomEvent('pd-open-form'));
+    }
   }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right"
   }))));
@@ -392,6 +856,7 @@ function Hero() {
   React.useEffect(() => {
     window.lucide && lucide.createIcons();
   }, []);
+  const fmt = n => n.toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
   const track = [{
     name: 'warehouse',
     lab: 'Склад в Китае',
@@ -411,19 +876,21 @@ function Hero() {
   }];
   const stats = [{
     ic: 'users',
-    big: '1 200+',
+    count: 1200,
+    suffix: '+',
     sub: 'доверили нам свои грузы'
   }, {
     ic: 'container',
-    big: '1 275 000+ кг',
+    count: 1275000,
+    suffix: '+ кг',
     sub: 'успешно доставлено'
   }, {
     ic: 'warehouse',
-    big: 'Склад в Китае',
+    text: 'Склад в Китае',
     sub: 'принимаем, проверяем, маркируем'
   }, {
     ic: 'weight',
-    big: 'От 100 кг',
+    text: 'От 100 кг',
     sub: 'работаем с бизнесом и оптом'
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -439,8 +906,12 @@ function Hero() {
   }), /*#__PURE__*/React.createElement("div", {
     className: "pd-hero-photo"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/hero-port.png",
-    alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao"
+    src: "../../assets/hero-port.jpg",
+    alt: "\u041A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043D\u044B\u0439 \u043F\u043E\u0440\u0442 PanDao",
+    width: "1500",
+    height: "844",
+    decoding: "async",
+    fetchpriority: "high"
   }), /*#__PURE__*/React.createElement("div", {
     className: "pd-chip-accept"
   }, /*#__PURE__*/React.createElement("span", {
@@ -496,11 +967,13 @@ function Hero() {
   }, "\u0420\u0430\u0431\u043E\u0442\u0430\u0435\u043C \u0441 \u0440\u044B\u043D\u043A\u0430\u043C\u0438 \u0420\u043E\u0441\u0441\u0438\u0438 \u0438 \u0421\u041D\u0413, \u043D\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0433\u043B\u0443\u0431\u043E\u043A\u043E \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u0435\u043C\u0441\u044F \u043D\u0430 \u044D\u0442\u0438\u0445 \u043C\u0430\u0440\u0448\u0440\u0443\u0442\u0430\u0445."), /*#__PURE__*/React.createElement("div", {
     className: "pd-hero-cta"
   }, /*#__PURE__*/React.createElement("button", {
-    className: "pd-btn pd-btn--primary"
+    className: "pd-btn pd-btn--primary",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right"
-  })), /*#__PURE__*/React.createElement("button", {
-    className: "pd-btn pd-btn--ghost"
+  })), /*#__PURE__*/React.createElement("a", {
+    className: "pd-btn pd-btn--ghost",
+    href: "#uslugi"
   }, "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0443\u0441\u043B\u0443\u0433\u0438 ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right"
   })))), /*#__PURE__*/React.createElement("div", {
@@ -514,7 +987,11 @@ function Hero() {
     name: s.ic
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "big"
-  }, s.big), /*#__PURE__*/React.createElement("div", {
+  }, s.text ? s.text : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    className: "cu",
+    "data-count": s.count,
+    "data-dur": "1800"
+  }, fmt(s.count)), s.suffix)), /*#__PURE__*/React.createElement("div", {
     className: "sub"
   }, s.sub)))))));
 }
@@ -522,171 +999,6 @@ Object.assign(window, {
   Hero
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Hero.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/Results.jsx
-try { (() => {
-// Results section — premium dark stat panel + capability cards.
-// Brand "control-room" treatment: dark panel with map/route graphics,
-// animated count-up numbers, and numbered capability cards below.
-
-function KgIconR() {
-  return /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 32 32",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M11 9.5C11 7.6 13.2 6 16 6s5 1.6 5 3.5c0 .9-.6 1.6-1.4 2.2 2.5 1 4.4 2.9 5 5.4l1.3 5.6c.5 2.2-1.1 4.3-3.3 4.3H9.4c-2.2 0-3.8-2.1-3.3-4.3l1.3-5.6c.6-2.5 2.5-4.4 5-5.4C11.6 11.1 11 10.4 11 9.5Z",
-    stroke: "currentColor",
-    strokeWidth: "1.7",
-    strokeLinejoin: "round"
-  }), /*#__PURE__*/React.createElement("text", {
-    x: "16",
-    y: "22.3",
-    textAnchor: "middle",
-    fontFamily: "Onest, sans-serif",
-    fontWeight: "800",
-    fontSize: "7.4",
-    fill: "currentColor",
-    letterSpacing: "-.3"
-  }, "KG"));
-}
-function Results() {
-  const panelRef = React.useRef(null);
-  React.useEffect(() => {
-    window.lucide && lucide.createIcons();
-    const el = panelRef.current;
-    if (!el) return;
-    let done = false;
-    const trigger = () => {
-      if (done) return;
-      const r = el.getBoundingClientRect();
-      if (r.top < (window.innerHeight || 800) * 0.85 && r.bottom > 0) {
-        done = true;
-        el.classList.add('in');
-        window.removeEventListener('scroll', trigger);
-      }
-    };
-    trigger();
-    window.addEventListener('scroll', trigger, {
-      passive: true
-    });
-    return () => window.removeEventListener('scroll', trigger);
-  }, []);
-  const stats = [{
-    ic: 'users',
-    num: '500',
-    suffix: '+',
-    label: 'довольных клиентов'
-  }, {
-    ic: 'container',
-    num: '1 275 000',
-    suffix: ' кг+',
-    label: 'успешно доставленных грузов'
-  }, {
-    ic: 'shield-check',
-    num: '600',
-    suffix: ' кг+',
-    label: 'потерянных грузов, за которые мы полностью возместили ущерб'
-  }];
-  const caps = [{
-    idx: '01',
-    ic: 'kg',
-    t: 'От 100 кг',
-    d: 'Работаем с грузами от 100 кг.'
-  }, {
-    idx: '02',
-    ic: 'boxes',
-    t: 'Сборные грузы',
-    d: 'Объединяем грузы нескольких клиентов в один контейнер, чтобы Вы экономили.'
-  }, {
-    idx: '03',
-    ic: 'calculator',
-    t: 'От 5000 тонн',
-    d: 'Рассчитываем по индивидуальным ценам до Вашего города.'
-  }, {
-    idx: '04',
-    ic: 'container',
-    t: 'Контейнерная перевозка',
-    d: 'Наши логисты сформируют самый удобный для Вас маршрут по индивидуальным параметрам.',
-    accent: 'Дешевле? Быстрее? Надёжнее? Сделаем!'
-  }];
-  return /*#__PURE__*/React.createElement("section", {
-    className: "pd-section pd-rz"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "pd-wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-panel",
-    ref: panelRef
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-bg-grid"
-  }), /*#__PURE__*/React.createElement("svg", {
-    className: "pd-rz-route",
-    viewBox: "0 0 1100 260",
-    preserveAspectRatio: "none",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M40,210 C260,90 460,250 640,120 S960,40 1080,90",
-    fill: "none",
-    stroke: "#DE2931",
-    strokeWidth: "1.6",
-    strokeDasharray: "2 10",
-    strokeLinecap: "round",
-    opacity: "0.55"
-  })), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-cross",
-    style: {
-      top: '22%',
-      right: '14%'
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-ping",
-    style: {
-      top: '64%',
-      right: '8%'
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-coord"
-  }, "43.2389\xB0 N", /*#__PURE__*/React.createElement("br", null), "45.7560\xB0 E"), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-head"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "pd-kicker"
-  }, "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B PanDao"), /*#__PURE__*/React.createElement("h2", null, "\u041B\u043E\u0433\u0438\u0441\u0442\u0438\u043A\u0430 \u2014 \u044D\u0442\u043E \u043D\u0435 \u043F\u0440\u043E\xA0\xAB\u0432\u0441\u0451\xA0\u0438\u0434\u0435\u0430\u043B\u044C\u043D\u043E\xBB.", /*#__PURE__*/React.createElement("br", null), "\u042D\u0442\u043E \u043F\u0440\u043E ", /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-red"
-  }, "\xAB\u043E\u0442\u0432\u0435\u0447\u0430\u0435\u043C\xA0\u0437\u0430\xA0\u043A\u0430\u0436\u0434\u044B\u0439\xBB"), ".")), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-stats"
-  }, stats.map((s, i) => /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-stat",
-    key: i
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-node"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: s.ic
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-num"
-  }, s.num, /*#__PURE__*/React.createElement("span", {
-    className: "u"
-  }, s.suffix)), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-lab"
-  }, s.label))))), /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-caps"
-  }, caps.map((c, i) => /*#__PURE__*/React.createElement("div", {
-    className: "pd-rz-cap",
-    key: i
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-idx"
-  }, c.idx), /*#__PURE__*/React.createElement("span", {
-    className: "pd-rz-chip"
-  }, c.ic === 'kg' ? /*#__PURE__*/React.createElement(KgIconR, null) : /*#__PURE__*/React.createElement(Icon, {
-    name: c.ic
-  })), /*#__PURE__*/React.createElement("h3", null, c.t), /*#__PURE__*/React.createElement("p", null, c.d), c.accent && /*#__PURE__*/React.createElement("p", {
-    className: "pd-rz-accent"
-  }, c.accent))))));
-}
-Object.assign(window, {
-  Results
-});
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Results.jsx", error: String((e && e.message) || e) }); }
 
 // ui_kits/website/Services.jsx
 try { (() => {
@@ -696,45 +1008,55 @@ function Services() {
     window.lucide && lucide.createIcons();
   }, []);
   const serv = [{
-    ic: 'key-round',
+    em: '🗝️',
+    anim: 'a-swing',
     t: 'Доставка под ключ',
     d: 'От приёмки груза в Китае до доставки на Северный Кавказ.',
     dark: false
   }, {
-    ic: 'container',
+    em: '🚢',
+    anim: 'a-float',
     t: 'Контейнерные перевозки',
     d: 'Подбираем маршрут под задачу: дешевле, быстрее или надёжнее.',
     dark: true
   }, {
-    ic: 'boxes',
+    em: '📦',
+    anim: 'a-bounce',
     t: 'Сборные грузы',
     d: 'Объединяем грузы клиентов, чтобы снизить стоимость перевозки.',
     dark: false
   }, {
-    ic: 'warehouse',
+    em: '🏭',
+    anim: 'a-pulse',
     t: 'Склад в Китае',
     d: 'Принимаем, проверяем, маркируем и готовим груз к отправке.',
     dark: true
   }, {
-    ic: 'shopping-cart',
+    em: '🛒',
+    anim: 'a-wiggle',
     t: 'Байерские услуги',
     d: 'Помогаем найти, проверить и выкупить товар в Китае.',
     dark: false
   }, {
-    ic: 'users',
+    em: '🤝',
+    anim: 'a-pulse',
     t: 'Сопровождение в Китае',
     d: 'Встречаем, переводим, ведём переговоры и помогаем с фабриками.',
     dark: true
   }];
   return /*#__PURE__*/React.createElement("section", {
-    className: "pd-section pd-services"
+    className: "pd-section pd-services",
+    id: "uslugi"
   }, /*#__PURE__*/React.createElement("div", {
     className: "pd-svc-bg"
   }, /*#__PURE__*/React.createElement("img", {
     className: "pd-svc-port",
-    src: "../../assets/hero-port.png",
+    src: "../../assets/hero-port.jpg",
     alt: "",
-    "aria-hidden": "true"
+    "aria-hidden": "true",
+    loading: "lazy",
+    decoding: "async",
+    "data-parallax": "0.08"
   }), /*#__PURE__*/React.createElement("svg", {
     className: "pd-svc-route",
     viewBox: "0 0 1000 360",
@@ -766,9 +1088,9 @@ function Services() {
     className: "pd-card pd-serv " + (s.dark ? "pd-card--dark" : "pd-card--light")
   }, /*#__PURE__*/React.createElement("span", {
     className: "chip"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: s.ic
-  })), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-emoji " + s.anim
+  }, s.em)), /*#__PURE__*/React.createElement("div", {
     className: "pd-serv-body"
   }, /*#__PURE__*/React.createElement("h3", null, s.t), /*#__PURE__*/React.createElement("span", {
     className: "pd-serv-line"
@@ -801,37 +1123,130 @@ Object.assign(window, {
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Services.jsx", error: String((e && e.message) || e) }); }
 
+// ui_kits/website/SiteChrome.jsx
+try { (() => {
+// Site chrome: route-style scroll progress bar (top) + mobile sticky CTA
+// with native WhatsApp / Telegram marks.
+function ScrollProgress() {
+  const [p, setP] = React.useState(0);
+  React.useEffect(() => {
+    let ticking = false;
+    const upd = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setP(max > 0 ? Math.min(1, h.scrollTop / max) : 0);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(upd);
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, {
+      passive: true
+    });
+    upd();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "pd-progress",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pd-progress-track"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "pd-progress-fill",
+    style: {
+      width: (p * 100).toFixed(2) + '%'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-progress-plane"
+  }, /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "plane"
+  }))));
+}
+function WAIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 32 32",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
+    d: "M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 2.12.6 4.1 1.64 5.8L5 28l7.36-1.62a11 11 0 0 0 3.68.64h.01c6.08 0 11.02-4.94 11.02-11.02C27.07 8.94 22.12 4 16.04 4Zm0 20.18h-.01c-1.1 0-2.18-.3-3.12-.86l-.22-.13-3.7.97.99-3.61-.15-.23a8.97 8.97 0 0 1-1.38-4.78c0-4.96 4.04-9 9-9 2.4 0 4.66.94 6.36 2.64a8.94 8.94 0 0 1 2.64 6.36c0 4.96-4.04 9-8.99 9Zm4.94-6.73c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.8-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.84.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+  }));
+}
+function TGIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 32 32",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
+    d: "M16 4C9.37 4 4 9.37 4 16s5.37 12 12 12 12-5.37 12-12S22.63 4 16 4Zm5.57 8.2-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.32c-.15.15-.28.28-.57.28l.2-2.9 5.27-4.76c.23-.2-.05-.32-.35-.12l-6.51 4.1-2.81-.88c-.61-.19-.62-.61.13-.9l10.98-4.23c.51-.19.96.12.79.86Z"
+  }));
+}
+function StickyCTA() {
+  React.useEffect(() => {
+    const tick = () => window.lucide && lucide.createIcons();
+    tick();
+    const id = setTimeout(tick, 600);
+    return () => clearTimeout(id);
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "pd-sticky-cta"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "pd-sticky-msg pd-sticky-wa",
+    href: "https://wa.me/79280000000",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "WhatsApp"
+  }, /*#__PURE__*/React.createElement(WAIcon, null)), /*#__PURE__*/React.createElement("a", {
+    className: "pd-sticky-msg pd-sticky-tg",
+    href: "https://t.me/pandao",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "Telegram"
+  }, /*#__PURE__*/React.createElement(TGIcon, null)), /*#__PURE__*/React.createElement("button", {
+    className: "pd-sticky-calc",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
+  }, /*#__PURE__*/React.createElement("i", {
+    "data-lucide": "calculator"
+  }), " \u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C"));
+}
+Object.assign(window, {
+  ScrollProgress,
+  StickyCTA
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/SiteChrome.jsx", error: String((e && e.message) || e) }); }
+
 // ui_kits/website/Warehouse.jsx
 try { (() => {
 // Warehouse & control section: copy + features + CTA, photo with stat strip, process timeline.
 function Warehouse() {
+  const [playing, setPlaying] = React.useState(false);
   React.useEffect(() => {
     window.lucide && lucide.createIcons();
-  }, []);
+  }, [playing]);
   const feats = [{
-    ic: 'building-2',
+    em: '🏭',
+    anim: 'a-float',
     t: 'Собственный склад в Китае',
     d: 'Принимаем товар из любого города Китая'
   }, {
-    ic: 'search-check',
+    em: '🔍',
+    anim: 'a-swing',
     t: 'Проверка и фотоотчёт',
     d: 'Проверяем качество и соответствие заказа'
   }, {
-    ic: 'package',
-    t: 'Упаковка и маркировка',
-    d: 'Надёжно упакуем и промаркируем груз'
-  }, {
-    ic: 'shield-check',
+    em: '🛡️',
+    anim: 'a-pulse',
     t: 'Страхование и безопасность',
     d: 'Ваш груз застрахован и под нашей ответственностью'
   }, {
-    ic: 'video',
+    em: '🎥',
+    anim: 'a-bounce',
     t: 'Видеоотчёт в рабочий чат',
     d: 'По получению груза на склад отправляем видеоотчёт'
-  }, {
-    ic: 'headset',
-    t: 'Быстрая поддержка 24/7',
-    d: 'Быстрые ответы от техподдержки в любое время'
   }];
   const whstats = [{
     ic: 'warehouse',
@@ -904,21 +1319,51 @@ function Warehouse() {
     key: i
   }, /*#__PURE__*/React.createElement("span", {
     className: "ic"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: f.ic
-  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "pd-emoji " + f.anim
+  }, f.em)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "t"
   }, f.t), /*#__PURE__*/React.createElement("div", {
     className: "d"
   }, f.d))))), /*#__PURE__*/React.createElement("button", {
-    className: "pd-btn pd-btn--primary"
+    className: "pd-btn pd-btn--primary",
+    onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0423\u0437\u043D\u0430\u0442\u044C \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right"
   }))), /*#__PURE__*/React.createElement("div", {
-    className: "pd-wh-photo"
+    className: "pd-wh-photo pd-wh-live"
+  }, !playing ? /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "pd-live-frame",
+    onClick: () => setPlaying(true),
+    "aria-label": "\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u0440\u044F\u043C\u0443\u044E \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044E"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/warehouse.png",
-    alt: "\u0421\u043A\u043B\u0430\u0434 PanDao \u0432 \u041A\u0438\u0442\u0430\u0435"
+    src: "../../assets/warehouse.jpg",
+    alt: "\u041F\u0440\u044F\u043C\u0430\u044F \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044F \u0441\u043E \u0441\u043A\u043B\u0430\u0434\u0430 PanDao",
+    width: "1400",
+    height: "957",
+    loading: "lazy",
+    decoding: "async"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "pd-live-scrim"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "pd-live-badge"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dot"
+  }), "\u041F\u0440\u044F\u043C\u0430\u044F \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044F \u0441\u043E \u0441\u043A\u043B\u0430\u0434\u0430 PanDao"), /*#__PURE__*/React.createElement("span", {
+    className: "pd-live-play"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "play"
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "pd-live-cap"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "s"
+  }, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439 \xB7 \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A \xB7 \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430 \xB7 \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B"))) : /*#__PURE__*/React.createElement("iframe", {
+    className: "pd-live-iframe",
+    src: "https://www.youtube.com/embed/LJgXwC-AKu8?autoplay=1&rel=0&modestbranding=1",
+    title: "\u041F\u0440\u044F\u043C\u0430\u044F \u0442\u0440\u0430\u043D\u0441\u043B\u044F\u0446\u0438\u044F \u0441\u043E \u0441\u043A\u043B\u0430\u0434\u0430 PanDao",
+    allow: "autoplay; encrypted-media; picture-in-picture; fullscreen",
+    allowFullScreen: true
   }), /*#__PURE__*/React.createElement("div", {
     className: "pd-wh-stats"
   }, whstats.map((s, i) => /*#__PURE__*/React.createElement("div", {
@@ -948,7 +1393,11 @@ function Warehouse() {
     className: "ph"
   }, /*#__PURE__*/React.createElement("img", {
     src: `../../assets/proc-${p.img}.jpg`,
-    alt: p.tt
+    alt: p.tt,
+    width: "640",
+    height: "480",
+    loading: "lazy",
+    decoding: "async"
   })), /*#__PURE__*/React.createElement("div", {
     className: "no"
   }, p.no), /*#__PURE__*/React.createElement("div", {
@@ -961,5 +1410,102 @@ Object.assign(window, {
   Warehouse
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Warehouse.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/website/effects.js
+try { (() => {
+/* PanDao site effects — count-up + micro-parallax. Plain JS, no deps.
+   Robust: respects prefers-reduced-motion and falls back to final values. */
+(function () {
+  var reduce = false;
+  try {
+    reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch (e) {}
+  function fmtRu(n) {
+    return Math.round(n).toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
+  }
+  function runCount(el) {
+    if (el.dataset.cuDone) return;
+    el.dataset.cuDone = '1';
+    var target = parseFloat(el.getAttribute('data-count'));
+    if (isNaN(target)) return;
+    var dur = parseInt(el.getAttribute('data-dur') || '1500', 10);
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    var start = null;
+    function fmt(v) {
+      return dec ? v.toFixed(dec).replace('.', ',') : fmtRu(v);
+    }
+    function step(t) {
+      if (!start) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * e);
+      if (p < 1) requestAnimationFrame(step);else el.textContent = fmt(target);
+    }
+    requestAnimationFrame(step);
+  }
+  function initCount() {
+    var els = [].slice.call(document.querySelectorAll('[data-count]'));
+    if (!els.length) return;
+    if (reduce || !('IntersectionObserver' in window)) {
+      return;
+    } /* fallback: keep final text */
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (en.isIntersecting) {
+          runCount(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    }, {
+      threshold: 0.45
+    });
+    els.forEach(function (el) {
+      if (!el.dataset.cuDone) io.observe(el);
+    });
+  }
+  var parallaxInited = false;
+  function initParallax() {
+    if (reduce || parallaxInited) return;
+    var els = [].slice.call(document.querySelectorAll('[data-parallax]'));
+    if (!els.length) return;
+    parallaxInited = true;
+    var ticking = false;
+    function update() {
+      var vh = window.innerHeight || 800;
+      els.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var center = r.top + r.height / 2;
+        var rel = (center - vh / 2) / vh; /* ~ -0.6 .. 0.6 */
+        var sp = parseFloat(el.getAttribute('data-parallax')) || 0.12;
+        var y = Math.max(-18, Math.min(18, -rel * sp * 120));
+        el.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0) scale(1.1)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, {
+      passive: true
+    });
+    window.addEventListener('resize', update, {
+      passive: true
+    });
+    update();
+  }
+  function init() {
+    initCount();
+    initParallax();
+  }
+  if (document.readyState !== 'loading') init();else document.addEventListener('DOMContentLoaded', init);
+  window.addEventListener('load', init);
+  /* React mounts async — retry a couple times to catch late nodes */
+  setTimeout(init, 700);
+  setTimeout(init, 1500);
+  window.pdEffectsInit = init;
+})();
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/effects.js", error: String((e && e.message) || e) }); }
 
 })();

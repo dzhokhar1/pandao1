@@ -23,6 +23,13 @@ function Footer() {
               <a href="#">Грозный</a><a href="#">Пятигорск</a>
               <a href="#">Махачкала</a><a href="#">Минеральные Воды</a>
             </div>
+            <div>
+              <h4>Документы</h4>
+              <a href="legal/privacy.html">Политика конфиденциальности</a>
+              <a href="legal/consent.html">Согласие на обработку ПДн</a>
+              <a href="legal/cookies.html">Политика cookie</a>
+              <a href="legal/terms.html">Пользовательское соглашение</a>
+            </div>
           </div>
         </div>
         <div className="bottom">

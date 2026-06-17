@@ -1,0 +1,9 @@
+/* ============================================================
+   PanDao Design System — global stylesheet entry point.
+   Consumers link THIS file to get the full brand foundation
+   (colors, type, radii, shadows, spacing tokens + semantic
+   type classes). Kit-specific styles (ui_kits/website/kit.css,
+   legal/legal.css) already @import this foundation themselves,
+   so they are intentionally NOT pulled in globally here.
+   ============================================================ */
+@import url('colors_and_type.css');

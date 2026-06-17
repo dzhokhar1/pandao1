@@ -1,6 +1,7 @@
 // Hero: eyebrow route, headline, lead, CTAs, port photo with floating cards, stat row.
 function Hero() {
   React.useEffect(() => { window.lucide && lucide.createIcons(); }, []);
+  const fmt = (n) => n.toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
   const track = [
     { name: 'warehouse', lab: 'Склад в Китае', on: true },
     { name: 'truck', lab: 'Транспортировка', on: false },
@@ -8,10 +9,10 @@ function Hero() {
     { name: 'check', lab: 'Доставка', on: false },
   ];
   const stats = [
-    { ic: 'users', big: '1 200+', sub: 'доверили нам свои грузы' },
-    { ic: 'container', big: '1 275 000+ кг', sub: 'успешно доставлено' },
-    { ic: 'warehouse', big: 'Склад в Китае', sub: 'принимаем, проверяем, маркируем' },
-    { ic: 'weight', big: 'От 100 кг', sub: 'работаем с бизнесом и оптом' },
+    { ic: 'users', count: 1200, suffix: '+', sub: 'доверили нам свои грузы' },
+    { ic: 'container', count: 1275000, suffix: '+ кг', sub: 'успешно доставлено' },
+    { ic: 'warehouse', text: 'Склад в Китае', sub: 'принимаем, проверяем, маркируем' },
+    { ic: 'weight', text: 'От 100 кг', sub: 'работаем с бизнесом и оптом' },
   ];
   return (
     <section className="pd-hero pd-section" style={{ paddingTop: 0, paddingBottom: 64 }}>
@@ -19,7 +20,7 @@ function Hero() {
       <div className="pd-hero-cross"></div>
 
       <div className="pd-hero-photo">
-        <img src="../../assets/hero-port.png" alt="Контейнерный порт PanDao" />
+        <img src="../../assets/hero-port.jpg" alt="Контейнерный порт PanDao" width="1500" height="844" decoding="async" fetchpriority="high" />
         <div className="pd-chip-accept">
           <span className="ic"><Icon name="warehouse" /></span>
           <div>
@@ -61,8 +62,8 @@ function Hero() {
             Работаем с рынками России и СНГ, но особенно глубоко специализируемся на этих маршрутах.
           </p>
           <div className="pd-hero-cta">
-            <button className="pd-btn pd-btn--primary">Рассчитать доставку <Icon name="arrow-right" /></button>
-            <button className="pd-btn pd-btn--ghost">Посмотреть услуги <Icon name="arrow-right" /></button>
+            <button className="pd-btn pd-btn--primary" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>Рассчитать доставку <Icon name="arrow-right" /></button>
+            <a className="pd-btn pd-btn--ghost" href="#uslugi">Посмотреть услуги <Icon name="arrow-right" /></a>
           </div>
         </div>
 
@@ -71,7 +72,7 @@ function Hero() {
             <div className="cell" key={i}>
               <span className="ic"><Icon name={s.ic} /></span>
               <div>
-                <div className="big">{s.big}</div>
+                <div className="big">{s.text ? s.text : (<React.Fragment><span className="cu" data-count={s.count} data-dur="1800">{fmt(s.count)}</span>{s.suffix}</React.Fragment>)}</div>
                 <div className="sub">{s.sub}</div>
               </div>
             </div>

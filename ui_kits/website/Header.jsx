@@ -11,7 +11,7 @@ function Header() {
           <nav className="pd-nav">
             {links.map(l => <a key={l} href="#">{l}</a>)}
           </nav>
-          <button className="pd-btn pd-btn--primary pd-btn--sm">Рассчитать доставку</button>
+          <button className="pd-btn pd-btn--primary pd-btn--sm" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>Рассчитать доставку</button>
           <button className="pd-burger" onClick={() => setOpen(true)} aria-label="Меню">
             <Icon name="menu" />
           </button>
@@ -26,7 +26,7 @@ function Header() {
           </button>
         </div>
         {links.map(l => <a key={l} href="#" onClick={() => setOpen(false)}>{l}</a>)}
-        <button className="pd-btn pd-btn--primary" onClick={() => setOpen(false)}>
+        <button className="pd-btn pd-btn--primary" onClick={() => { setOpen(false); window.dispatchEvent(new CustomEvent('pd-open-form')); }}>
           Рассчитать доставку <Icon name="arrow-right" />
         </button>
       </div>

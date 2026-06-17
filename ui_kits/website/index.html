@@ -5,9 +5,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PanDao Logistics — Доставка из Китая на Северный Кавказ</title>
+<link rel="preload" as="image" href="../../assets/hero-port.jpg">
 <link rel="stylesheet" href="kit.css">
+<style>
+  /* Preloader — shows instantly before React/Babel compile; hidden after load. */
+  #pd-preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:#14151A;transition:opacity .5s ease,visibility .5s ease;}
+  #pd-preloader.hide{opacity:0;visibility:hidden;}
+  #pd-preloader .pl-logo{width:210px;height:auto;opacity:0;transform:translateY(8px);
+    animation:pl-in .7s cubic-bezier(.2,.7,.2,1) .1s forwards;}
+  #pd-preloader .pl-track{margin-top:26px;width:190px;height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden;position:relative;}
+  #pd-preloader .pl-fill{position:absolute;inset:0;width:40%;border-radius:3px;background:linear-gradient(90deg,#DE2931,#ff6a4d);
+    animation:pl-load 1.1s cubic-bezier(.5,.1,.2,1) infinite;}
+  #pd-preloader .pl-cap{margin-top:16px;font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);
+    opacity:0;animation:pl-in .6s ease .35s forwards;}
+  @keyframes pl-in{to{opacity:1;transform:none;}}
+  @keyframes pl-load{0%{left:-40%;}100%{left:100%;}}
+  @media(prefers-reduced-motion:reduce){#pd-preloader .pl-logo,#pd-preloader .pl-cap{animation:none;opacity:1;transform:none;}#pd-preloader .pl-fill{animation:none;width:100%;}}
+</style>
 </head>
 <body>
+<div id="pd-preloader">
+  <img class="pl-logo" src="../../assets/logo-white.png" alt="PanDao Logistics" width="210" height="79">
+  <div class="pl-track"><div class="pl-fill"></div></div>
+  <div class="pl-cap">Китай → Северный Кавказ</div>
+</div>
+
 <div id="root"></div>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
@@ -19,10 +42,14 @@
 <script type="text/babel" src="Header.jsx"></script>
 <script type="text/babel" src="Hero.jsx"></script>
 <script type="text/babel" src="Facts.jsx"></script>
-<script type="text/babel" src="Results.jsx"></script>
 <script type="text/babel" src="Services.jsx"></script>
 <script type="text/babel" src="Warehouse.jsx"></script>
+<script type="text/babel" src="Faq.jsx"></script>
+<script type="text/babel" src="Contacts.jsx"></script>
 <script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="ContactModal.jsx"></script>
+<script type="text/babel" src="CookieBanner.jsx"></script>
+<script type="text/babel" src="SiteChrome.jsx"></script>
 
 <script type="text/babel">
   function App() {
@@ -31,21 +58,45 @@
       tick();
       const id = setInterval(tick, 400);
       setTimeout(() => clearInterval(id), 2500);
+      // count-up / parallax (re-scan after React mounts)
+      if (window.pdEffectsInit) setTimeout(window.pdEffectsInit, 200);
       return () => clearInterval(id);
     }, []);
     return (
       <div className="pd-site">
+        <ScrollProgress />
         <Header />
         <Hero />
         <Services />
         <Warehouse />
         <Facts />
-        <Results />
+        <Faq />
+        <Contacts />
         <Footer />
+        <ContactModal />
+        <CookieBanner />
+        <StickyCTA />
       </div>
     );
   }
   ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+<script src="effects.js"></script>
+<script>
+  /* Hide preloader after load + a short minimum so the logo reads. */
+  (function () {
+    var pre = document.getElementById('pd-preloader');
+    if (!pre) return;
+    var t0 = Date.now(), MIN = 900;
+    function hide() {
+      var wait = Math.max(0, MIN - (Date.now() - t0));
+      setTimeout(function () { pre.classList.add('hide'); setTimeout(function(){ pre.remove(); }, 600); }, wait);
+    }
+    if (document.readyState === 'complete') hide();
+    else window.addEventListener('load', hide);
+    setTimeout(hide, 5000); /* safety */
+  })();
 </script>
 </body>
 </html>
