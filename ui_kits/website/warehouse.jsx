@@ -15,11 +15,11 @@ function Warehouse() {
     { ic: 'shield-check', big: '0', sub: 'потерянных грузов за 5 лет работы' },
   ];
   const proc = [
-    { ic: 'package-check', no: '01', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая' },
-    { ic: 'search-check', no: '02', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа' },
-    { ic: 'package', no: '03', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу' },
-    { ic: 'warehouse', no: '04', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков' },
-    { ic: 'truck', no: '05', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ' },
+    { ic: 'package-check', no: '01', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая', img: 'warehouse.webp' },
+    { ic: 'search-check', no: '02', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа', img: 'facts-bg.jpg' },
+    { ic: 'package', no: '03', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу', img: 'warehouse.webp' },
+    { ic: 'warehouse', no: '04', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков', img: 'warehouse.webp' },
+    { ic: 'truck', no: '05', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ', img: 'hero-port.webp' },
   ];
   return (
     <section className="pd-section pd-wh-section">
@@ -56,9 +56,6 @@ function Warehouse() {
                 <span className="pd-live-scrim"></span>
                 <span className="pd-live-badge"><span className="dot"></span>Прямая трансляция со склада PanDao</span>
                 <span className="pd-live-play"><Icon name="play" /></span>
-                <span className="pd-live-cap">
-                  <span className="s">Грозный · Пятигорск · Махачкала · Минеральные Воды</span>
-                </span>
               </button>
             ) : (
               <iframe className="pd-live-iframe" src="https://www.youtube.com/embed/LJgXwC-AKu8?autoplay=1&rel=0&modestbranding=1"
@@ -83,7 +80,7 @@ function Warehouse() {
               <React.Fragment key={i}>
                 {i > 0 && <div className="pd-proc-arrow"><Icon name="arrow-right" /></div>}
                 <div className="step">
-                  <div className="ph"><span className="pd-proc-ic"><Icon name={p.ic} /></span><span className="pd-proc-wm">{p.no}</span></div>
+                  <div className="ph" style={{ '--ph-img': `url(../../assets/${p.img})` }}><span className="pd-proc-ic"><Icon name={p.ic} /></span><span className="pd-proc-wm">{p.no}</span></div>
                   <div className="no">{p.no}</div>
                   <div className="tt">{p.tt}</div>
                   <div className="dd">{p.dd}</div>

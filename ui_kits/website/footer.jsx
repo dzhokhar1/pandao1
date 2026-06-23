@@ -9,7 +9,7 @@ function Footer() {
           <div style={{ maxWidth: 280 }}>
             <img className="logo" src="../../assets/pandao-logo-dark.svg" alt="PanDao Logistics" width="388" height="131" />
             <p style={{ color: 'var(--pd-on-dark-mut)', fontSize: 15, lineHeight: 1.5, marginTop: 18 }}>
-              Доставка грузов из любого города Китая на Северный Кавказ.
+              Доставка грузов из любого города Китая в Россию и СНГ.
             </p>
           </div>
           <div className="cols">
@@ -22,6 +22,7 @@ function Footer() {
               <h4>Маршруты</h4>
               <a href="#">Грозный</a><a href="#">Пятигорск</a>
               <a href="#">Махачкала</a><a href="#">Минеральные Воды</a>
+              <a href="#">Москва</a>
             </div>
             <div>
               <h4>Документы</h4>

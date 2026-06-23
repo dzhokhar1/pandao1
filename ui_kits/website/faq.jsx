@@ -18,11 +18,9 @@ function Faq() {
   ];
   return (
     <section className="pd-section pd-faq" id="faq">
-      <span className="pd-faq-cross" aria-hidden="true"></span>
       <div className="pd-wrap pd-faq-wrap">
         <div className="pd-faq-aside">
-          <span className="pd-kicker">Вопросы и ответы</span>
-          <h2>Частые вопросы<br/>о доставке</h2>
+          <h2>Вопросы и ответы</h2>
           <span className="pd-divider"></span>
           <p>Не нашли ответ? Логист PanDao ответит на любой вопрос и рассчитает доставку под ваш груз.</p>
           <button className="pd-btn pd-btn--primary" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>

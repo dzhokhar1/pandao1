@@ -7,9 +7,6 @@ function Icon({ name, className, style }) {
 function MapBg({ children }) {
   return (
     <div className="pd-mapbg">
-      <div className="pd-coord" style={{ right: 28, bottom: 40, textAlign: 'right' }}>43.2389° N<br/>45.7560° E</div>
-      <div className="pd-cross" style={{ left: 36, top: 340 }}></div>
-      <div className="pd-dot" style={{ left: 200, top: 360 }}></div>
       {children}
     </div>
   );

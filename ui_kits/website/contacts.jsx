@@ -17,10 +17,10 @@ function TelegramIcon() {
 function Contacts() {
   React.useEffect(() => { window.lucide && lucide.createIcons(); }, []);
   const items = [
-    { ic: 'phone', lab: 'Телефон', val: '+7 (928) 000-00-00', href: 'tel:+79280000000' },
-    { ic: 'mail', lab: 'Почта', val: 'info@pandao.example', href: 'mailto:info@pandao.example' },
-    { ic: 'map-pin', lab: 'Склад в Китае', val: 'г. Гуанчжоу, район Байюнь', href: null },
-    { ic: 'clock', lab: 'Часы работы', val: 'Пн–Сб · 9:00–20:00 (МСК)', href: null },
+    { ic: 'phone', lab: 'Телефон', val: '+7 (985) 071-01-01', href: 'tel:+79850710101' },
+    { ic: 'mail', lab: 'Почта', val: 'pandaologistics@gmail.com', href: 'mailto:pandaologistics@gmail.com' },
+    { ic: 'map-pin', lab: 'Адрес в Китае', val: '广东省佛山市里水镇胜利社区河朱沙上庄上进路6号厂房零一零一', href: null },
+    { ic: 'clock', lab: 'Часы работы', val: 'Пн–Сб • 9:00 до 18:00 (МСК)', href: null },
   ];
   return (
     <section className="pd-section pd-contacts" id="contacts">
@@ -34,7 +34,7 @@ function Contacts() {
           <span className="pd-kicker">Контакты</span>
           <h2>Рассчитаем доставку<br/>вашего груза</h2>
           <span className="pd-divider"></span>
-          <p className="pd-ct-lead">Свяжитесь удобным способом — логист на связи в мессенджерах и по телефону. Ответим, рассчитаем маршрут и сроки из Китая на Северный Кавказ.</p>
+          <p className="pd-ct-lead">Наши менеджеры всегда на связи в мессенджерах и соцсетях.</p>
 
           <div className="pd-ct-grid-items">
             {items.map((it, i) => {
@@ -76,7 +76,7 @@ function Contacts() {
             <span className="line"></span>
             <span>Северный Кавказ</span>
           </div>
-          <div className="pd-ct-cities">Грозный · Пятигорск · Махачкала · Минеральные Воды</div>
+          <div className="pd-ct-cities">Грозный · Пятигорск · Махачкала · Мин. воды · Москва</div>
         </div>
       </div>
     </section>

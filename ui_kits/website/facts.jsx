@@ -42,7 +42,6 @@ function Facts() {
   ];
   const losses = [
     { ic: 'shield-check', count: 600, unit: ' кг', lab: 'утерянного груза полностью возместили клиентам' },
-    { ic: 'package-check', count: 1000, unit: '+ товаров', lab: 'повреждено в дороге — ущерб закрыли за свой счёт' },
   ];
 
   return (
@@ -68,12 +67,10 @@ function Facts() {
           <div className="pd-fc3-stack reveal">
             <div className="pd-fc3-img-main">
               <img src="../../assets/hero-port.webp" alt="Контейнерный порт PanDao" width="1500" height="844" loading="lazy" decoding="async" data-parallax="0.14" />
-              <span className="pd-fc3-coord">43.2389° N<br/>45.7560° E</span>
-              <span className="pd-fc3-cross"></span>
               <div className="pd-fc3-flag">
                 <span className="chip"><Icon name="container" /></span>
                 <div>
-                  <div className="num"><span className="cu" data-count="1275000" data-dur="2000">{fmt(1275000)}</span><span className="u">+ кг</span></div>
+                  <div className="num"><span className="cu">1,275</span><span className="u">+ тонн</span></div>
                   <div className="lab">успешно доставленных товаров</div>
                 </div>
               </div>
