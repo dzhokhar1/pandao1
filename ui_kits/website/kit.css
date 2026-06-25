@@ -165,7 +165,7 @@ body{
   .pd-hero-coord{display:block;left:5px;top:66px;font-size:10px;line-height:1.5;letter-spacing:0;}
   .pd-hero-cross{display:block;left:10px;top:430px;}
   .pd-hero-route{display:flex;flex-wrap:nowrap;white-space:nowrap;font-size:10.5px;letter-spacing:.04em;gap:6px;}
-  .pd-hero-content{min-height:auto;padding:18px 0 0 30px;max-width:none;position:relative;}
+  .pd-hero-content{min-height:auto;padding:18px 0 0 0;max-width:none;position:relative;}
   .pd-hero h1{font-size:clamp(26px,7.6vw,34px);margin-top:14px;}
   .pd-hero-lead{font-size:15px;line-height:1.55;max-width:66%;}
   .pd-hero-cta{flex-direction:row;flex-wrap:nowrap;align-items:stretch;gap:9px;margin-top:24px;max-width:none;}
@@ -211,7 +211,7 @@ body{
 }
 @media(max-width:420px){
   .pd-hero-photo{aspect-ratio:1/1.18;}
-  .pd-hero-content{padding-left:26px;}
+  .pd-hero-content{padding-left:0;}
   .pd-dest--m span{font-size:9.5px;}
   .pd-herostats .big{font-size:15px;}
 }
