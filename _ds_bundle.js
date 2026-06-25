@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"c37b49e0e98c","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"73d4d1821f1f","ui_kits/website/faq.jsx":"1f006f181325","ui_kits/website/footer.jsx":"6c9c83f93b2d","ui_kits/website/header.jsx":"899f46bbf5a1","ui_kits/website/hero.jsx":"0c88bb67f8dc","ui_kits/website/services.jsx":"4e3904c9d982","ui_kits/website/siteChrome.jsx":"e2ec8aa555d9","ui_kits/website/warehouse.jsx":"e4f7d2d3fb63"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"35a44b1da733","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"5bb96b24526c","ui_kits/website/faq.jsx":"8e75060be3ad","ui_kits/website/footer.jsx":"6c9c83f93b2d","ui_kits/website/header.jsx":"899f46bbf5a1","ui_kits/website/hero.jsx":"f6954cc7c9d2","ui_kits/website/services.jsx":"a3cfe5302a84","ui_kits/website/siteChrome.jsx":"e2ec8aa555d9","ui_kits/website/warehouse.jsx":"329793c8fc77"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -157,12 +157,12 @@ try { (() => {
 // Brand SVG icons for messengers (native marks, single-color on dark).
 function WhatsAppIcon() {
   return /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 32 32",
+    viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement("path", {
     fill: "currentColor",
-    d: "M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 2.12.6 4.1 1.64 5.8L5 28l7.36-1.62a11 11 0 0 0 3.68.64h.01c6.08 0 11.02-4.94 11.02-11.02C27.07 8.94 22.12 4 16.04 4Zm0 20.18h-.01c-1.1 0-2.18-.3-3.12-.86l-.22-.13-3.7.97.99-3.61-.15-.23a8.97 8.97 0 0 1-1.38-4.78c0-4.96 4.04-9 9-9 2.4 0 4.66.94 6.36 2.64a8.94 8.94 0 0 1 2.64 6.36c0 4.96-4.04 9-8.99 9Zm4.94-6.73c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.8-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.84.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+    d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
   }));
 }
 function TelegramIcon() {
@@ -271,7 +271,7 @@ function Contacts() {
     className: "pd-ct-badge"
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), "\u041D\u0430 \u0441\u0432\u044F\u0437\u0438 \u0441\u0435\u0439\u0447\u0430\u0441"), /*#__PURE__*/React.createElement("h3", null, "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0437\u0430\u044F\u0432\u043A\u0443"), /*#__PURE__*/React.createElement("p", null, "\u041F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 15 \u043C\u0438\u043D\u0443\u0442 \u0432 \u0440\u0430\u0431\u043E\u0447\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u043C \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C.")), /*#__PURE__*/React.createElement("button", {
+  }), "\u041D\u0430 \u0441\u0432\u044F\u0437\u0438 \u0441\u0435\u0439\u0447\u0430\u0441"), /*#__PURE__*/React.createElement("h3", null, "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0437\u0430\u044F\u0432\u043A\u0443")), /*#__PURE__*/React.createElement("button", {
     className: "pd-btn pd-btn--primary pd-ct-cta",
     onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 ", /*#__PURE__*/React.createElement("i", {
@@ -660,10 +660,8 @@ function Facts() {
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
   }), /*#__PURE__*/React.createElement("span", {
-    className: "cu",
-    "data-count": "1200",
-    "data-dur": "1800"
-  }, fmt(1200)), "+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432")), /*#__PURE__*/React.createElement("span", {
+    className: "cu"
+  }, "1200"), "+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432")), /*#__PURE__*/React.createElement("span", {
     className: "pd-fc3-ping"
   })), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-ledger"
@@ -750,7 +748,7 @@ function Faq() {
     className: "pd-faq-aside"
   }, /*#__PURE__*/React.createElement("h2", null, "\u0412\u043E\u043F\u0440\u043E\u0441\u044B \u0438 \u043E\u0442\u0432\u0435\u0442\u044B"), /*#__PURE__*/React.createElement("span", {
     className: "pd-divider"
-  }), /*#__PURE__*/React.createElement("p", null, "\u041D\u0435 \u043D\u0430\u0448\u043B\u0438 \u043E\u0442\u0432\u0435\u0442? \u041B\u043E\u0433\u0438\u0441\u0442 PanDao \u043E\u0442\u0432\u0435\u0442\u0438\u0442 \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u0432\u043E\u043F\u0440\u043E\u0441 \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u043F\u043E\u0434 \u0432\u0430\u0448 \u0433\u0440\u0443\u0437."), /*#__PURE__*/React.createElement("button", {
+  }), /*#__PURE__*/React.createElement("p", null, "\u041D\u0443\u0436\u043D\u043E \u0431\u043E\u043B\u044C\u0448\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438? \u041C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u044B PanDao \u043E\u0442\u0432\u0435\u0442\u044F\u0442 \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u0432\u043E\u043F\u0440\u043E\u0441 \u0438 \u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u044E\u0442 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u043F\u043E\u0434 \u0432\u0430\u0448 \u0433\u0440\u0443\u0437."), /*#__PURE__*/React.createElement("button", {
     className: "pd-btn pd-btn--primary",
     onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0417\u0430\u0434\u0430\u0442\u044C \u0432\u043E\u043F\u0440\u043E\u0441 ", /*#__PURE__*/React.createElement("i", {
@@ -983,7 +981,7 @@ function Hero() {
       marginTop: 16
     }
   }, "\u0413\u043B\u0430\u0432\u043D\u044B\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F: ", /*#__PURE__*/React.createElement("b", null, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439, \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A, \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430, \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B, \u041C\u043E\u0441\u043A\u0432\u0430.")), /*#__PURE__*/React.createElement("p", {
-    className: "pd-hero-lead",
+    className: "pd-hero-lead pd-hero-dests",
     style: {
       marginTop: 16
     }
@@ -1090,7 +1088,7 @@ function Hero() {
     className: "ar"
   }, "\u041A\u0438\u0442\u0430\u0439"), " \u2192 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"), /*#__PURE__*/React.createElement("div", {
     className: "ct"
-  }, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439 \xB7 \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A \xB7 \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430 \xB7 \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B"), /*#__PURE__*/React.createElement("div", {
+  }, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439 \xB7 \u041F\u044F\u0442\u0438\u0433\u043E\u0440\u0441\u043A \xB7 \u041C\u0430\u0445\u0430\u0447\u043A\u0430\u043B\u0430 \xB7 \u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0435 \u0412\u043E\u0434\u044B \xB7 \u041C\u043E\u0441\u043A\u0432\u0430"), /*#__PURE__*/React.createElement("div", {
     className: "pd-track"
   }, track.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -1140,37 +1138,37 @@ function Services() {
     em: '🚢',
     anim: 'a-float',
     t: 'Логистика',
-    d: 'Контейнерные перевозки, сборные грузы и полное оформление документации — берём весь маршрут под контроль.',
+    d: 'Контейнерные перевозки, сборные грузы и полное оформление документации — берём весь маршрут под контроль',
     dark: false
   }, {
     em: '🛒',
     anim: 'a-wiggle',
     t: 'Байерские услуги',
-    d: 'Найдём, проверим и выкупим любой товар: от одежды и аксессуаров до стройматериалов и автомобилей.',
+    d: 'Найдём, проверим и выкупим любой товар: от одежды и аксессуаров до стройматериалов и автомобилей',
     dark: true
   }, {
     em: '⚙️',
     anim: 'a-pulse',
     t: 'Бизнес-сопровождение «под ключ»',
-    d: 'Наладим производство полного цикла: работа напрямую с заводами, СТМ, упаковка и сертификация товара.',
+    d: 'Наладим производство полного цикла: работа напрямую с заводами, СТМ, упаковка и сертификация товара',
     dark: false
   }, {
     em: '✈️',
     anim: 'a-swing',
     t: 'Бизнес-туры',
-    d: 'Индивидуальные туры по заводам и рынкам Китая для личного знакомства. Встретим, переведём и всё покажем.',
+    d: 'Индивидуальные туры по заводам и рынкам Китая для личного знакомства. Встретим, переведём и всё покажем',
     dark: true
   }, {
     em: '💱',
     anim: 'a-pulse',
     t: 'Обмен валюты',
-    d: 'Работаем с юанями, долларами и криптовалютой — удобный обмен и расчёты под задачи вашего бизнеса.',
+    d: 'Работаем с юанями, долларами и криптовалютой — удобный обмен и расчёты под задачи вашего бизнеса',
     dark: false
   }, {
     em: '🤝',
     anim: 'a-pulse',
     t: 'Сопровождение в Китае',
-    d: 'Встретим, переведём, поможем на переговорах и на производстве. Ваш человек на месте, когда нужно.',
+    d: 'Встретим, переведём, поможем на переговорах и на производстве. Ваш человек на месте, когда нужно',
     dark: true
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -1370,31 +1368,31 @@ function Warehouse() {
   }];
   const proc = [{
     ic: 'package-check',
-    no: '01',
+    no: '1',
     tt: 'Приём груза',
     dd: 'Принимаем товар от поставщика из любого города Китая',
     img: 'warehouse.webp'
   }, {
     ic: 'search-check',
-    no: '02',
+    no: '2',
     tt: 'Проверка',
     dd: 'Проверяем качество и соответствие вашего заказа',
     img: 'facts-bg.jpg'
   }, {
     ic: 'package',
-    no: '03',
+    no: '3',
     tt: 'Упаковка и маркировка',
     dd: 'Надёжно упакуем и промаркируем каждую единицу',
     img: 'warehouse.webp'
   }, {
     ic: 'warehouse',
-    no: '04',
+    no: '4',
     tt: 'Хранение',
     dd: 'Бережное хранение до отправки без лишних рисков',
     img: 'warehouse.webp'
   }, {
     ic: 'truck',
-    no: '05',
+    no: '5',
     tt: 'Отправка',
     dd: 'Формируем маршрут и отправляем на Северный Кавказ',
     img: 'hero-port.webp'
@@ -1420,7 +1418,7 @@ function Warehouse() {
     style: {
       marginTop: 20
     }
-  }, "\u0421\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u0441\u043A\u043B\u0430\u0434 \u0432 \u041A\u0438\u0442\u0430\u0435 \u2014 \u044D\u0442\u043E \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0430, \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0435 \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435 \u0438 \u043F\u043E\u043B\u043D\u0430\u044F \u0433\u043E\u0442\u043E\u0432\u043D\u043E\u0441\u0442\u044C \u0433\u0440\u0443\u0437\u0430 \u043A \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0435 \u043D\u0430 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437."), /*#__PURE__*/React.createElement("div", {
+  }, "\u041F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u043C \u0442\u043E\u0432\u0430\u0440 \u043E\u0442 \u043F\u043E\u0441\u0442\u0430\u0432\u0449\u0438\u043A\u0430, \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C, \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0440\u0443\u0435\u043C \u0438 \u0433\u043E\u0442\u043E\u0432\u0438\u043C \u043A \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0435."), /*#__PURE__*/React.createElement("div", {
     className: "pd-feat"
   }, feats.map((f, i) => /*#__PURE__*/React.createElement("div", {
     className: "row",

@@ -28,7 +28,7 @@ function Hero() {
           <p className="pd-hero-lead pd-hero-dests" style={{ marginTop: 16 }}>
             Главные направления: <b>Грозный, Пятигорск, Махачкала, Минеральные Воды, Москва.</b>
           </p>
-          <p className="pd-hero-lead" style={{ marginTop: 16 }}>
+          <p className="pd-hero-lead pd-hero-dests" style={{ marginTop: 16 }}>
             Берём на себя весь путь: склад в Китае, выкуп, документы, таможню и доставку. Вы просто получаете товар.
           </p>
           <div className="pd-hero-cta">
@@ -76,7 +76,7 @@ function Hero() {
         </div>
         <div className="pd-route-panel">
           <div className="rt">Основной маршрут: <span className="ar">Китай</span> → Северный Кавказ</div>
-          <div className="ct">Грозный · Пятигорск · Махачкала · Минеральные Воды</div>
+          <div className="ct">Грозный · Пятигорск · Махачкала · Минеральные Воды · Москва</div>
           <div className="pd-track">
             {track.map((s, i) => (
               <div key={i} className={"st" + (s.on ? " on" : "")}>

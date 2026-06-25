@@ -22,7 +22,7 @@ function Faq() {
         <div className="pd-faq-aside">
           <h2>Вопросы и ответы</h2>
           <span className="pd-divider"></span>
-          <p>Не нашли ответ? Логист PanDao ответит на любой вопрос и рассчитает доставку под ваш груз.</p>
+          <p>Нужно больше информации? Менеджеры PanDao ответят на любой вопрос и рассчитают доставку под ваш груз.</p>
           <button className="pd-btn pd-btn--primary" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>
             Задать вопрос <i data-lucide="arrow-right"></i>
           </button>

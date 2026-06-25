@@ -77,7 +77,7 @@ function Facts() {
             </div>
             <div className="pd-fc3-img-sub">
               <img src="../../assets/warehouse.webp" alt="Склад PanDao в Китае" width="1400" height="957" loading="lazy" decoding="async" data-parallax="0.2" />
-              <div className="pd-fc3-subchip"><span className="dot"></span><span className="cu" data-count="1200" data-dur="1800">{fmt(1200)}</span>+ клиентов</div>
+              <div className="pd-fc3-subchip"><span className="dot"></span><span className="cu">1200</span>+ клиентов</div>
             </div>
             <span className="pd-fc3-ping"></span>
           </div>
