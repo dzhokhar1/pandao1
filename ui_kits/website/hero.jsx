@@ -25,7 +25,7 @@ function Hero() {
           <p className="pd-hero-lead">
             Доставляем грузы из любого города Китая прямо в Россию и СНГ.
           </p>
-          <p className="pd-hero-lead pd-hero-dests" style={{ marginTop: 16 }}>
+          <p className="pd-hero-lead pd-hero-mdest" style={{ marginTop: 16 }}>
             Главные направления: <b>Грозный, Пятигорск, Махачкала, Минеральные Воды, Москва.</b>
           </p>
           <p className="pd-hero-lead pd-hero-dests" style={{ marginTop: 16 }}>

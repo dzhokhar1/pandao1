@@ -45,7 +45,7 @@ function Facts() {
   ];
 
   return (
-    <section className="pd-section pd-facts3" ref={secRef}>
+    <section className="pd-section pd-facts3" id="o-kompanii" ref={secRef}>
       <span className="pd-fc3-bg-grid"></span>
       <svg className="pd-fc3-bg-route" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
         <path d="M-20,250 C260,120 480,300 700,170 S1080,80 1240,150" fill="none" stroke="#DE2931" strokeWidth="1.4" strokeDasharray="2 11" strokeLinecap="round" opacity="0.4"/>
@@ -77,7 +77,7 @@ function Facts() {
             </div>
             <div className="pd-fc3-img-sub">
               <img src="../../assets/warehouse.webp" alt="Склад PanDao в Китае" width="1400" height="957" loading="lazy" decoding="async" data-parallax="0.2" />
-              <div className="pd-fc3-subchip"><span className="dot"></span><span className="cu">1200</span>+ клиентов</div>
+              <div className="pd-fc3-subchip"><span className="dot"></span><span className="txt"><span className="cu">1200</span>+ клиентов</span></div>
             </div>
             <span className="pd-fc3-ping"></span>
           </div>

@@ -15,8 +15,8 @@ function Footer() {
           <div className="cols">
             <div>
               <h4>Компания</h4>
-              <a href="#">Услуги</a><a href="#">Маршруты</a>
-              <a href="#">О компании</a><a href="#">Контакты</a>
+              <a href="#uslugi">Услуги</a><a href="#marshruty">Маршруты</a>
+              <a href="#o-kompanii">О компании</a><a href="#contacts">Контакты</a>
             </div>
             <div>
               <h4>Маршруты</h4>

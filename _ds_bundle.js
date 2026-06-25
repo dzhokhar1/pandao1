@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"35a44b1da733","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"5bb96b24526c","ui_kits/website/faq.jsx":"8e75060be3ad","ui_kits/website/footer.jsx":"6c9c83f93b2d","ui_kits/website/header.jsx":"899f46bbf5a1","ui_kits/website/hero.jsx":"f6954cc7c9d2","ui_kits/website/services.jsx":"a3cfe5302a84","ui_kits/website/siteChrome.jsx":"e2ec8aa555d9","ui_kits/website/warehouse.jsx":"329793c8fc77"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"529cb60c2087","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"fd53e8b0a0d9","ui_kits/website/faq.jsx":"8e75060be3ad","ui_kits/website/footer.jsx":"82d5cd8cdf71","ui_kits/website/header.jsx":"314edd6198c2","ui_kits/website/hero.jsx":"a3ae0ba3ef4b","ui_kits/website/services.jsx":"a3cfe5302a84","ui_kits/website/siteChrome.jsx":"e2ec8aa555d9","ui_kits/website/warehouse.jsx":"bf7793a6da8e"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -183,22 +183,30 @@ function Contacts() {
     ic: 'phone',
     lab: 'Телефон',
     val: '+7 (985) 071-01-01',
-    href: 'tel:+79850710101'
+    href: 'tel:+79850710101',
+    c: '#1F8A5B',
+    bg: 'rgba(31,138,91,.12)'
   }, {
     ic: 'mail',
     lab: 'Почта',
     val: 'pandaologistics@gmail.com',
-    href: 'mailto:pandaologistics@gmail.com'
+    href: 'mailto:pandaologistics@gmail.com',
+    c: '#2A6FDB',
+    bg: 'rgba(42,111,219,.12)'
   }, {
     ic: 'map-pin',
     lab: 'Адрес в Китае',
     val: '广东省佛山市里水镇胜利社区河朱沙上庄上进路6号厂房零一零一',
-    href: null
+    href: null,
+    c: '#DE2931',
+    bg: 'rgba(222,41,49,.12)'
   }, {
     ic: 'clock',
     lab: 'Часы работы',
     val: 'Пн–Сб • 9:00 до 18:00 (МСК)',
-    href: null
+    href: null,
+    c: '#D97757',
+    bg: 'rgba(217,119,87,.15)'
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "pd-section pd-contacts",
@@ -233,7 +241,11 @@ function Contacts() {
     className: "pd-ct-grid-items"
   }, items.map((it, i) => {
     const inner = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-      className: "ic"
+      className: "ic",
+      style: {
+        color: it.c,
+        background: it.bg
+      }
     }, /*#__PURE__*/React.createElement("i", {
       "data-lucide": it.ic
     })), /*#__PURE__*/React.createElement("span", {
@@ -591,6 +603,7 @@ function Facts() {
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "pd-section pd-facts3",
+    id: "o-kompanii",
     ref: secRef
   }, /*#__PURE__*/React.createElement("span", {
     className: "pd-fc3-bg-grid"
@@ -660,8 +673,10 @@ function Facts() {
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
   }), /*#__PURE__*/React.createElement("span", {
+    className: "txt"
+  }, /*#__PURE__*/React.createElement("span", {
     className: "cu"
-  }, "1200"), "+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432")), /*#__PURE__*/React.createElement("span", {
+  }, "1200"), "+ \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"))), /*#__PURE__*/React.createElement("span", {
     className: "pd-fc3-ping"
   })), /*#__PURE__*/React.createElement("div", {
     className: "pd-fc3-ledger"
@@ -815,13 +830,13 @@ function Footer() {
   }, "\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430 \u0433\u0440\u0443\u0437\u043E\u0432 \u0438\u0437 \u043B\u044E\u0431\u043E\u0433\u043E \u0433\u043E\u0440\u043E\u0434\u0430 \u041A\u0438\u0442\u0430\u044F \u0432 \u0420\u043E\u0441\u0441\u0438\u044E \u0438 \u0421\u041D\u0413.")), /*#__PURE__*/React.createElement("div", {
     className: "cols"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "\u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "#uslugi"
   }, "\u0423\u0441\u043B\u0443\u0433\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "#marshruty"
   }, "\u041C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "#o-kompanii"
   }, "\u041E \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "#"
+    href: "#contacts"
   }, "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "\u041C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
     href: "#"
   }, "\u0413\u0440\u043E\u0437\u043D\u044B\u0439"), /*#__PURE__*/React.createElement("a", {
@@ -854,7 +869,19 @@ try { (() => {
 // Site header: logo, desktop nav, CTA, mobile hamburger + slide-in menu.
 function Header() {
   const [open, setOpen] = React.useState(false);
-  const links = ['Услуги', 'Маршруты', 'О компании', 'Контакты'];
+  const links = [{
+    l: 'Услуги',
+    h: '#uslugi'
+  }, {
+    l: 'Маршруты',
+    h: '#marshruty'
+  }, {
+    l: 'О компании',
+    h: '#o-kompanii'
+  }, {
+    l: 'Контакты',
+    h: '#contacts'
+  }];
   React.useEffect(() => {
     window.lucide && lucide.createIcons();
   }, [open]);
@@ -871,9 +898,9 @@ function Header() {
   }), /*#__PURE__*/React.createElement("nav", {
     className: "pd-nav"
   }, links.map(l => /*#__PURE__*/React.createElement("a", {
-    key: l,
-    href: "#"
-  }, l))), /*#__PURE__*/React.createElement("button", {
+    key: l.l,
+    href: l.h
+  }, l.l))), /*#__PURE__*/React.createElement("button", {
     className: "pd-btn pd-btn--primary pd-btn--sm",
     onClick: () => window.dispatchEvent(new CustomEvent('pd-open-form'))
   }, "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0443"), /*#__PURE__*/React.createElement("button", {
@@ -897,10 +924,10 @@ function Header() {
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "x"
   }))), links.map(l => /*#__PURE__*/React.createElement("a", {
-    key: l,
-    href: "#",
+    key: l.l,
+    href: l.h,
     onClick: () => setOpen(false)
-  }, l)), /*#__PURE__*/React.createElement("button", {
+  }, l.l)), /*#__PURE__*/React.createElement("button", {
     className: "pd-btn pd-btn--primary",
     onClick: () => {
       setOpen(false);
@@ -976,7 +1003,7 @@ function Hero() {
   }), /*#__PURE__*/React.createElement("p", {
     className: "pd-hero-lead"
   }, "\u0414\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u043C \u0433\u0440\u0443\u0437\u044B \u0438\u0437 \u043B\u044E\u0431\u043E\u0433\u043E \u0433\u043E\u0440\u043E\u0434\u0430 \u041A\u0438\u0442\u0430\u044F \u043F\u0440\u044F\u043C\u043E \u0432 \u0420\u043E\u0441\u0441\u0438\u044E \u0438 \u0421\u041D\u0413."), /*#__PURE__*/React.createElement("p", {
-    className: "pd-hero-lead pd-hero-dests",
+    className: "pd-hero-lead pd-hero-mdest",
     style: {
       marginTop: 16
     }
@@ -1371,34 +1398,35 @@ function Warehouse() {
     no: '1',
     tt: 'Приём груза',
     dd: 'Принимаем товар от поставщика из любого города Китая',
-    img: 'warehouse.webp'
+    img: '../../assets/warehouse.webp'
   }, {
     ic: 'search-check',
     no: '2',
     tt: 'Проверка',
     dd: 'Проверяем качество и соответствие вашего заказа',
-    img: 'facts-bg.jpg'
+    img: 'https://plus.unsplash.com/premium_photo-1661933130869-eba2d7e28332?fm=jpg&q=80&w=900&auto=format&fit=crop'
   }, {
     ic: 'package',
     no: '3',
     tt: 'Упаковка и маркировка',
     dd: 'Надёжно упакуем и промаркируем каждую единицу',
-    img: 'warehouse.webp'
+    img: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=900&auto=format&fit=crop'
   }, {
     ic: 'warehouse',
     no: '4',
     tt: 'Хранение',
     dd: 'Бережное хранение до отправки без лишних рисков',
-    img: 'warehouse.webp'
+    img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=900&auto=format&fit=crop'
   }, {
     ic: 'truck',
     no: '5',
     tt: 'Отправка',
     dd: 'Формируем маршрут и отправляем на Северный Кавказ',
-    img: 'hero-port.webp'
+    img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=900&auto=format&fit=crop'
   }];
   return /*#__PURE__*/React.createElement("section", {
-    className: "pd-section pd-wh-section"
+    className: "pd-section pd-wh-section",
+    id: "marshruty"
   }, /*#__PURE__*/React.createElement(MapBg, null), /*#__PURE__*/React.createElement("div", {
     className: "pd-wrap"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1496,7 +1524,7 @@ function Warehouse() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "ph",
     style: {
-      '--ph-img': `url(../../assets/${p.img})`
+      '--ph-img': `url(${p.img})`
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "pd-proc-ic"
@@ -1505,10 +1533,12 @@ function Warehouse() {
   })), /*#__PURE__*/React.createElement("span", {
     className: "pd-proc-wm"
   }, p.no)), /*#__PURE__*/React.createElement("div", {
+    className: "ttl"
+  }, /*#__PURE__*/React.createElement("span", {
     className: "no"
-  }, p.no), /*#__PURE__*/React.createElement("div", {
+  }, p.no), /*#__PURE__*/React.createElement("span", {
     className: "tt"
-  }, p.tt), /*#__PURE__*/React.createElement("div", {
+  }, p.tt)), /*#__PURE__*/React.createElement("div", {
     className: "dd"
   }, p.dd))))))));
 }

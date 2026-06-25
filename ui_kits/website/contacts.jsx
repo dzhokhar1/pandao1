@@ -17,10 +17,10 @@ function TelegramIcon() {
 function Contacts() {
   React.useEffect(() => { window.lucide && lucide.createIcons(); }, []);
   const items = [
-    { ic: 'phone', lab: 'Телефон', val: '+7 (985) 071-01-01', href: 'tel:+79850710101' },
-    { ic: 'mail', lab: 'Почта', val: 'pandaologistics@gmail.com', href: 'mailto:pandaologistics@gmail.com' },
-    { ic: 'map-pin', lab: 'Адрес в Китае', val: '广东省佛山市里水镇胜利社区河朱沙上庄上进路6号厂房零一零一', href: null },
-    { ic: 'clock', lab: 'Часы работы', val: 'Пн–Сб • 9:00 до 18:00 (МСК)', href: null },
+    { ic: 'phone', lab: 'Телефон', val: '+7 (985) 071-01-01', href: 'tel:+79850710101', c: '#1F8A5B', bg: 'rgba(31,138,91,.12)' },
+    { ic: 'mail', lab: 'Почта', val: 'pandaologistics@gmail.com', href: 'mailto:pandaologistics@gmail.com', c: '#2A6FDB', bg: 'rgba(42,111,219,.12)' },
+    { ic: 'map-pin', lab: 'Адрес в Китае', val: '广东省佛山市里水镇胜利社区河朱沙上庄上进路6号厂房零一零一', href: null, c: '#DE2931', bg: 'rgba(222,41,49,.12)' },
+    { ic: 'clock', lab: 'Часы работы', val: 'Пн–Сб • 9:00 до 18:00 (МСК)', href: null, c: '#D97757', bg: 'rgba(217,119,87,.15)' },
   ];
   return (
     <section className="pd-section pd-contacts" id="contacts">
@@ -40,7 +40,7 @@ function Contacts() {
             {items.map((it, i) => {
               const inner = (
                 <React.Fragment>
-                  <span className="ic"><i data-lucide={it.ic}></i></span>
+                  <span className="ic" style={{ color: it.c, background: it.bg }}><i data-lucide={it.ic}></i></span>
                   <span className="pd-ct-txt"><span className="l">{it.lab}</span><span className="v">{it.val}</span></span>
                 </React.Fragment>
               );

@@ -15,14 +15,14 @@ function Warehouse() {
     { ic: 'shield-check', big: '0', sub: 'потерянных грузов за 5 лет работы' },
   ];
   const proc = [
-    { ic: 'package-check', no: '1', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая', img: 'warehouse.webp' },
-    { ic: 'search-check', no: '2', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа', img: 'facts-bg.jpg' },
-    { ic: 'package', no: '3', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу', img: 'warehouse.webp' },
-    { ic: 'warehouse', no: '4', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков', img: 'warehouse.webp' },
-    { ic: 'truck', no: '5', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ', img: 'hero-port.webp' },
+    { ic: 'package-check', no: '1', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая', img: '../../assets/warehouse.webp' },
+    { ic: 'search-check', no: '2', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа', img: 'https://plus.unsplash.com/premium_photo-1661933130869-eba2d7e28332?fm=jpg&q=80&w=900&auto=format&fit=crop' },
+    { ic: 'package', no: '3', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу', img: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=900&auto=format&fit=crop' },
+    { ic: 'warehouse', no: '4', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=900&auto=format&fit=crop' },
+    { ic: 'truck', no: '5', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ', img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=900&auto=format&fit=crop' },
   ];
   return (
-    <section className="pd-section pd-wh-section">
+    <section className="pd-section pd-wh-section" id="marshruty">
       <MapBg />
       <div className="pd-wrap">
         <div className="pd-wh-grid">
@@ -79,9 +79,8 @@ function Warehouse() {
               <React.Fragment key={i}>
                 {i > 0 && <div className="pd-proc-arrow"><Icon name="arrow-right" /></div>}
                 <div className="step">
-                  <div className="ph" style={{ '--ph-img': `url(../../assets/${p.img})` }}><span className="pd-proc-ic"><Icon name={p.ic} /></span><span className="pd-proc-wm">{p.no}</span></div>
-                  <div className="no">{p.no}</div>
-                  <div className="tt">{p.tt}</div>
+                  <div className="ph" style={{ '--ph-img': `url(${p.img})` }}><span className="pd-proc-ic"><Icon name={p.ic} /></span><span className="pd-proc-wm">{p.no}</span></div>
+                  <div className="ttl"><span className="no">{p.no}</span><span className="tt">{p.tt}</span></div>
                   <div className="dd">{p.dd}</div>
                 </div>
               </React.Fragment>
