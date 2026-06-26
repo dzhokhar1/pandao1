@@ -50,8 +50,8 @@ function StickyCTA() {
       <button className="pd-sticky-calc" onClick={() => window.dispatchEvent(new CustomEvent('pd-open-form'))}>
         <i data-lucide="calculator"></i> Рассчитать
       </button>
-      <a className="pd-sticky-msg pd-sticky-wa" href="https://wa.me/79280000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><WAIcon /></a>
-      <a className="pd-sticky-msg pd-sticky-tg" href="https://t.me/pandao" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><TGIcon /></a>
+      <a className="pd-sticky-msg pd-sticky-wa" href="https://wa.me/79850710101" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><WAIcon /></a>
+      <a className="pd-sticky-msg pd-sticky-tg" href="https://t.me/pandaologistics" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><TGIcon /></a>
     </div>
   );
 }

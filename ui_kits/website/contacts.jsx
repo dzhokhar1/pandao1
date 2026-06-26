@@ -51,10 +51,10 @@ function Contacts() {
           </div>
 
           <div className="pd-ct-msgs">
-            <a className="pd-msg pd-msg--wa" href="https://wa.me/79280000000" target="_blank" rel="noopener noreferrer">
+            <a className="pd-msg pd-msg--wa" href="https://wa.me/79850710101" target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon /> WhatsApp
             </a>
-            <a className="pd-msg pd-msg--tg" href="https://t.me/pandao" target="_blank" rel="noopener noreferrer">
+            <a className="pd-msg pd-msg--tg" href="https://t.me/pandaologistics" target="_blank" rel="noopener noreferrer">
               <TelegramIcon /> Telegram
             </a>
           </div>

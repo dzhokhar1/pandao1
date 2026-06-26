@@ -602,7 +602,8 @@ body{
 .pd-footer .cols{display:flex;gap:64px;flex-wrap:wrap;}
 .pd-footer h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--pd-on-dark-mut);margin:0 0 16px;font-weight:700;}
 .pd-footer a{display:block;color:#fff;text-decoration:none;font-size:15px;margin-bottom:12px;opacity:.85;}
-.pd-footer a:hover{opacity:1;color:var(--pd-red);}
+.pd-footer .bottom a{display:inline;font-size:inherit;margin:0;opacity:1;color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);}
+.pd-footer .bottom a:hover{color:var(--pd-red);border-color:var(--pd-red);}
 .pd-footer .bottom{margin-top:44px;padding-top:24px;border-top:1px solid var(--pd-dark-line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--pd-on-dark-mut);}
 
 /* ===================================================================

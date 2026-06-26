@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"529cb60c2087","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"fd53e8b0a0d9","ui_kits/website/faq.jsx":"8e75060be3ad","ui_kits/website/footer.jsx":"82d5cd8cdf71","ui_kits/website/header.jsx":"314edd6198c2","ui_kits/website/hero.jsx":"a3ae0ba3ef4b","ui_kits/website/services.jsx":"a3cfe5302a84","ui_kits/website/siteChrome.jsx":"e2ec8aa555d9","ui_kits/website/warehouse.jsx":"bf7793a6da8e"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PanDaoDesignSystem_7d45b9","components":[],"sourceHashes":{"ui_kits/website/contactModal.jsx":"946243f5f501","ui_kits/website/contacts.jsx":"67e6de84fffa","ui_kits/website/cookieBanner.jsx":"1deb4680557a","ui_kits/website/decor.jsx":"84b98d6e4a69","ui_kits/website/effects.js":"399b95f31efd","ui_kits/website/facts.jsx":"fd53e8b0a0d9","ui_kits/website/faq.jsx":"8e75060be3ad","ui_kits/website/footer.jsx":"4824bad5449c","ui_kits/website/header.jsx":"314edd6198c2","ui_kits/website/hero.jsx":"a3ae0ba3ef4b","ui_kits/website/services.jsx":"a3cfe5302a84","ui_kits/website/siteChrome.jsx":"4d30302b0e5d","ui_kits/website/warehouse.jsx":"bf7793a6da8e"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -267,12 +267,12 @@ function Contacts() {
     className: "pd-ct-msgs"
   }, /*#__PURE__*/React.createElement("a", {
     className: "pd-msg pd-msg--wa",
-    href: "https://wa.me/79280000000",
+    href: "https://wa.me/79850710101",
     target: "_blank",
     rel: "noopener noreferrer"
   }, /*#__PURE__*/React.createElement(WhatsAppIcon, null), " WhatsApp"), /*#__PURE__*/React.createElement("a", {
     className: "pd-msg pd-msg--tg",
-    href: "https://t.me/pandao",
+    href: "https://t.me/pandaologistics",
     target: "_blank",
     rel: "noopener noreferrer"
   }, /*#__PURE__*/React.createElement(TelegramIcon, null), " Telegram"))), /*#__PURE__*/React.createElement("div", {
@@ -857,7 +857,11 @@ function Footer() {
     href: "legal/terms.html"
   }, "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435")))), /*#__PURE__*/React.createElement("div", {
     className: "bottom"
-  }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 PanDao Logistics Company"), /*#__PURE__*/React.createElement("span", null, "\u041A\u0438\u0442\u0430\u0439 \u2192 \u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u041A\u0430\u0432\u043A\u0430\u0437"))));
+  }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 PanDao Logistics Company"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("a", {
+    href: "https://ataev.pro",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E: ataev.pro")))));
 }
 Object.assign(window, {
   Footer
@@ -1329,13 +1333,13 @@ function StickyCTA() {
     "data-lucide": "calculator"
   }), " \u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C"), /*#__PURE__*/React.createElement("a", {
     className: "pd-sticky-msg pd-sticky-wa",
-    href: "https://wa.me/79280000000",
+    href: "https://wa.me/79850710101",
     target: "_blank",
     rel: "noopener noreferrer",
     "aria-label": "WhatsApp"
   }, /*#__PURE__*/React.createElement(WAIcon, null)), /*#__PURE__*/React.createElement("a", {
     className: "pd-sticky-msg pd-sticky-tg",
-    href: "https://t.me/pandao",
+    href: "https://t.me/pandaologistics",
     target: "_blank",
     rel: "noopener noreferrer",
     "aria-label": "Telegram"

@@ -35,7 +35,7 @@ function Footer() {
         </div>
         <div className="bottom">
           <span>© 2026 PanDao Logistics Company</span>
-          <span>Китай → Северный Кавказ</span>
+          <span><a href="https://ataev.pro" target="_blank" rel="noopener noreferrer">Разработано: ataev.pro</a></span>
         </div>
       </div>
     </footer>
