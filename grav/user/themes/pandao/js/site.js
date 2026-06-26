@@ -13,6 +13,21 @@
       var f = modal.querySelector('input,textarea'); if (f) try { f.focus(); } catch(e){} }
     function closeModal(){ if (!modal) return; modal.style.display = 'none'; document.body.style.overflow = ''; }
 
+    // live RU phone formatting in the modal: +7 (XXX) XXX-XX-XX
+    var phoneInput = modal && modal.querySelector('input[type="tel"]');
+    if (phoneInput) phoneInput.addEventListener('input', function () {
+      var d = this.value.replace(/\D/g, '');
+      if (d[0] === '8') d = '7' + d.slice(1);
+      if (d[0] !== '7') d = '7' + d;
+      d = d.slice(0, 11);
+      var out = '+7';
+      if (d.length > 1) out += ' (' + d.slice(1, 4);
+      if (d.length >= 4) out += ') ' + d.slice(4, 7);
+      if (d.length >= 7) out += '-' + d.slice(7, 9);
+      if (d.length >= 9) out += '-' + d.slice(9, 11);
+      this.value = out;
+    });
+
     // any primary CTA (not the form submit, not the cookie accept) opens the modal
     document.querySelectorAll('button.pd-btn--primary, .pd-sticky-calc').forEach(function (b) {
       if (b.closest('#pd-modal')) return;

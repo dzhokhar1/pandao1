@@ -1,13 +1,51 @@
-{# Contact form modal — opened by any "Рассчитать доставку" button (pd-open-form) via site.js #}
+{# Contact form modal — custom .pd-form markup (so kit.css styles it) wired to the Grav
+   Form plugin (field names data[...] + the required hidden tokens). Opened via site.js. #}
 <div class="pd-modal-overlay" id="pd-modal" style="display:none">
   <div class="pd-modal" role="dialog" aria-modal="true" aria-label="Рассчитать доставку">
     <button class="pd-modal-close" type="button" data-pd-close aria-label="Закрыть"><i data-lucide="x"></i></button>
     <span class="pd-modal-grid" aria-hidden="true"></span>
+
+    {% if form.message and form.status == 'success' %}
+    <div class="pd-modal-in pd-modal-done">
+      <span class="pd-done-ic"><i data-lucide="check"></i></span>
+      <h3 class="pd-modal-title">Заявка принята</h3>
+      <p class="pd-modal-lead">{{ form.message|raw }}</p>
+      <button class="pd-btn pd-btn--ghost" type="button" data-pd-close>Закрыть</button>
+    </div>
+    {% else %}
     <div class="pd-modal-in">
       <span class="pd-kicker">Заявка PanDao</span>
       <h3 class="pd-modal-title">Рассчитать доставку</h3>
       <p class="pd-modal-lead">Оставьте контакты — логист свяжется с вами, уточнит детали груза и рассчитает маршрут из Китая на Северный Кавказ.</p>
-      {% include "forms/form.html.twig" %}
+
+      {% if form.message and form.status != 'success' %}<p class="pd-form-note" style="color:#c01620">{{ form.message|raw }}</p>{% endif %}
+
+      <form class="pd-form" name="{{ form.name }}" action="{{ page.url }}" method="post" novalidate>
+        <label class="pd-field">
+          <span class="pd-field-lab">Ваше имя</span>
+          <input type="text" name="data[name]" value="{{ form.value.name|e('html_attr') }}" placeholder="Как к вам обращаться" required>
+        </label>
+        <label class="pd-field">
+          <span class="pd-field-lab">Телефон</span>
+          <input type="tel" name="data[phone]" value="{{ form.value.phone|e('html_attr') }}" placeholder="+7 (___) ___-__-__" required>
+        </label>
+
+        <label class="pd-check">
+          <input type="checkbox" name="data[consent]" value="1" required>
+          <span class="pd-check-box"><i data-lucide="check"></i></span>
+          <span class="pd-check-lab">Согласен с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+        </label>
+
+        <button type="submit" class="pd-btn pd-btn--primary pd-form-submit">Отправить заявку <i data-lucide="arrow-right"></i></button>
+        <p class="pd-form-note">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных согласно 152-ФЗ.</p>
+
+        {# Grav Form plugin tokens — required for the POST to be processed #}
+        <input type="hidden" name="__form-name__" value="{{ form.name }}">
+        <input type="hidden" name="task" value="{{ form.task }}">
+        <input type="hidden" name="__unique_form_id__" value="{{ form.uniqueid() ?? random_string(20) }}">
+        <input type="hidden" name="{{ form.getNonceName() ?? 'form-nonce' }}" value="{{ form.getNonce() }}" class="form-nonce-field" data-nonce-action="{{ form.getNonceAction() ?? 'form' }}">
+      </form>
     </div>
+    {% endif %}
   </div>
 </div>
