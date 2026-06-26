@@ -24,9 +24,36 @@ bash scripts/build-grav.sh
 2. Залей **содержимое** `pandao-grav-beget.zip` в `~/<домен>/public_html/`
    (чтобы `index.php` и `.htaccess` оказались в корне).
 3. Открой `https://<домен>/admin` — Grav предложит создать аккаунт администратора.
-4. Заявки с формы приходят на `pandaologistics@gmail.com` (плагин Email, движок
-   `native`/PHP mail). Для надёжной доставки в админке → Plugins → Email можно включить
-   **SMTP** с почтового ящика Beget. Все заявки также сохраняются в админке (Forms/Data).
+4. Заявки с формы приходят на `pandaologistics@gmail.com` (плагин Email). Все заявки
+   также сохраняются в админке (Forms → Data) — даже если письмо не дошло.
+
+### SMTP (надёжная доставка писем, вместо PHP mail)
+1. В панели Beget → **Почта** создай ящик на домене, напр. `noreply@pandaologistics.com`, задай пароль.
+2. Grav admin → **Plugins → Email**: Engine = **SMTP**, и заполни:
+   - Server `smtp.beget.com`, Port `465`, Encryption `SSL`
+   - Username `noreply@pandaologistics.com`, Password = пароль ящика
+   - From `noreply@pandaologistics.com`, To `pandaologistics@gmail.com`
+   Сохрани → «Send Test Email».
+   Если 465/SSL не идёт — попробуй Port `587`, Encryption `TLS`.
+3. Либо файлом `user/config/plugins/email.yaml` (через файл-менеджер Beget):
+   ```yaml
+   enabled: true
+   from: 'noreply@pandaologistics.com'
+   from_name: 'PanDao'
+   to: 'pandaologistics@gmail.com'
+   content_type: 'text/html'
+   mailer:
+     engine: smtp
+     smtp:
+       server: 'smtp.beget.com'
+       port: 465
+       encryption: 'ssl'
+       user: 'noreply@pandaologistics.com'
+       password: 'ПАРОЛЬ_ЯЩИКА'
+   ```
+   После правки очистить кэш (admin → Cache, или удалить папку `cache/`).
+> `from` обязан быть реальным ящиком на домене (тем же, что SMTP user) — иначе письмо отклонят.
+> Пароль ящика в git НЕ коммитим.
 
 ## Что редактируется в админке
 - **SEO** — заголовок и метатеги каждой страницы (вкладка Options/SEO).
