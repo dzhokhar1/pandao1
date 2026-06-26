@@ -19,6 +19,8 @@ rm -rf "$GRAV/user/themes/quark2" "$GRAV/user/pages/"*
 cp -R "$ROOT/grav/user/themes/pandao" "$GRAV/user/themes/"
 cp -R "$ROOT/grav/user/pages/." "$GRAV/user/pages/"
 cp -R "$ROOT/grav/user/config/." "$GRAV/user/config/"
+# static SEO files at the site root (domain pandaologistics.com)
+cp "$ROOT/grav/root/robots.txt" "$ROOT/grav/root/sitemap.xml" "$GRAV/"
 
 echo "→ cleaning test data / caches (admin account is created on first /admin visit)…"
 rm -rf "$GRAV/user/accounts/"* "$GRAV/user/data/lead/"* "$GRAV/cache/"* "$GRAV/logs/"* 2>/dev/null || true

@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /backup/
+Disallow: /bin/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /system/
+Disallow: /vendor/
+Disallow: /user/accounts/
+Disallow: /user/config/
+Disallow: /user/data/
+Allow: /user/pages/
+Allow: /user/themes/
+Allow: /
+Allow: *.css$
+Allow: *.js$
+
+Sitemap: https://pandaologistics.com/sitemap.xml
