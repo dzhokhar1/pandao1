@@ -1,0 +1,10 @@
+{
+  "name": "pandao-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PanDao Logistics landing — production build into docs/ for Beget shared hosting",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 8099 --directory docs"
+  }
+}
