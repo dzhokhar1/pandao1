@@ -1,5 +1,5 @@
 /* PanDao Website UI Kit — component styles. Imports root tokens. */
-@import url('../../colors_and_type.css');
+@import url('colors_and_type.css');
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}

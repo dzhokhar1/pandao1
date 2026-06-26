@@ -10,7 +10,7 @@ if ($name === '' || $phone === '') {
   echo json_encode(['ok'=>false,'error'=>'Заполните имя и телефон']); exit;
 }
 
-$to   = 'info@pandaologistics.com';
+$to   = 'pandaologistics@gmail.com';
 $body = "Новая заявка с сайта PanDao\n\nИмя: $name\nТелефон: $phone\nДата: " . date('Y-m-d H:i');
 $head = "From: site@pandaologistics.com\r\nContent-Type: text/plain; charset=utf-8";
 @mail($to, '=?UTF-8?B?'.base64_encode('Заявка с сайта PanDao').'?=', $body, $head);

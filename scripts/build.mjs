@@ -20,7 +20,7 @@ const OUT = path.join(ROOT, 'docs');
 const DOMAIN = 'https://pandaologistics.com';
 const PHONE_DISPLAY = '+7 (985) 071-01-01';
 const PHONE_LD = '+7-985-071-01-01';
-const LEAD_EMAIL = 'info@pandaologistics.com';
+const LEAD_EMAIL = 'pandaologistics@gmail.com'; // inbox shown in the site contacts block
 
 const rd = (p) => fs.readFileSync(p, 'utf8');
 const wr = (p, s) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, s); };
@@ -34,13 +34,33 @@ fs.mkdirSync(OUT, { recursive: true });
 const ASSETS = ['hero-port.webp', 'warehouse.webp', 'pandao-logo.svg', 'pandao-logo-dark.svg'];
 for (const a of ASSETS) fs.cpSync(path.join(ROOT, 'assets', a), path.join(OUT, 'assets', a));
 
-// 3) css (rewrite ../../assets -> assets), effects, favicon, legal, vendor
-wr(path.join(OUT, 'kit.css'), rd(path.join(SRC, 'kit.css')).replaceAll('../../assets/', 'assets/'));
+// 3) css foundation, effects, favicon, legal, vendor
+// colors_and_type.css holds the CSS variables + type classes + the Onest @font-face import.
+// It lives at repo root and kit.css/legal.css pull it via ../../ paths that DON'T resolve in
+// the flat build — so we copy it to the site root and rewrite every import to a flat path.
+fs.cpSync(path.join(ROOT, 'colors_and_type.css'), path.join(OUT, 'colors_and_type.css'));
+wr(path.join(OUT, 'kit.css'), rd(path.join(SRC, 'kit.css'))
+  .replaceAll('../../assets/', 'assets/')
+  .replace('../../colors_and_type.css', 'colors_and_type.css'));
 fs.cpSync(path.join(SRC, 'effects.js'), path.join(OUT, 'effects.js'));
 fs.cpSync(path.join(SRC, 'favicon.svg'), path.join(OUT, 'favicon.svg'));
-fs.cpSync(path.join(SRC, 'legal'), path.join(OUT, 'legal'), { recursive: true });
 for (const v of ['react.production.min.js', 'react-dom.production.min.js'])
   fs.cpSync(path.join(SRC, 'vendor', v), path.join(OUT, 'vendor', v));
+
+// legal pages: copy, then fix flat-build paths (logo, foundation css) + wire the icon shim
+const FONT_LINK = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">';
+fs.mkdirSync(path.join(OUT, 'legal'), { recursive: true });
+for (const lf of fs.readdirSync(path.join(SRC, 'legal'))) {
+  let c = rd(path.join(SRC, 'legal', lf));
+  if (lf.endsWith('.css')) {
+    c = c.replace('../../../colors_and_type.css', '../colors_and_type.css');
+  } else if (lf.endsWith('.html')) {
+    c = c.replaceAll('../../../assets/', '../assets/')
+      .replace('</head>', `<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n${FONT_LINK}\n</head>`)
+      .replace('</body>', '<script src="../vendor/icons.js"></script><script>window.lucide&&lucide.createIcons();</script>\n</body>');
+  }
+  wr(path.join(OUT, 'legal', lf), c);
+}
 
 // 3.5) icon shim — auto-detect every Lucide icon the components use, pull each from a
 // local cache (fetch+cache on first use), and emit a tiny replacement for lucide.createIcons().
@@ -133,6 +153,10 @@ html = html.replace('<script src="effects.js"></script>',
   '<script src="vendor/icons.js"></script>\n' +
   '<script src="app.js"></script>\n' +
   '<script src="effects.js"></script>');
+
+// load the Onest font directly (parallel) instead of only via the colors_and_type.css @import chain
+html = html.replace('<link rel="stylesheet" href="kit.css">',
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">\n<link rel="stylesheet" href="kit.css">');
 
 // flat asset paths, real domain, real contacts
 html = html
