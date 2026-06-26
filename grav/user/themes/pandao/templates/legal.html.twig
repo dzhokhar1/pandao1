@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ theme_url }}/css/legal.css">
+{% endblock %}
+
+{% block body %}
+<header class="lg-header">
+  <div class="lg-header-in">
+    <a href="/"><img src="{{ theme_url }}/images/pandao-logo.svg" alt="PanDao Logistics" width="388" height="131"></a>
+    <a class="lg-back" href="/"><i data-lucide="arrow-left"></i> На главную</a>
+  </div>
+</header>
+<main class="lg-wrap">
+{{ page.content|raw }}
+</main>
+<footer class="lg-foot">
+  <div class="lg-foot-in">
+    <div class="lg-foot-copy">© 2026 PanDao Logistics Company. Доставка из Китая на Северный Кавказ.</div>
+  </div>
+</footer>
+<script src="{{ theme_url }}/js/icons.js"></script>
+<script>window.lucide&&lucide.createIcons();</script>
+{% endblock %}

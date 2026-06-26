@@ -1,0 +1,8 @@
+enabled: true
+from: 'noreply@pandaologistics.com'
+from_name: 'PanDao сайт'
+to: 'pandaologistics@gmail.com'
+to_name: 'PanDao'
+content_type: 'text/html'
+mailer:
+  engine: native

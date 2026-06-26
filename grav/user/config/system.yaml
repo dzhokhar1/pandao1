@@ -1,0 +1,24 @@
+absolute_urls: false
+timezone: 'Europe/Moscow'
+home:
+  alias: '/home'
+pages:
+  theme: pandao
+  type: regular
+languages:
+  default_lang: ru
+  include_default_lang: false
+cache:
+  enabled: true
+  check:
+    method: file
+twig:
+  cache: true
+  debug: false
+  auto_reload: true
+  autoescape: false
+assets:
+  css_pipeline: false
+  js_pipeline: false
+errors:
+  display: 0

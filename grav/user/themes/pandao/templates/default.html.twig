@@ -1,0 +1,45 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block head %}
+{% set p = page.header.pandao %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  "name": "{{ site.title }}",
+  "description": "{{ page.header.description ?? site.metadata.description }}",
+  "url": "https://pandaologistics.com/",
+  "logo": "https://pandaologistics.com/user/themes/pandao/images/pandao-logo.svg",
+  "image": "https://pandaologistics.com/user/themes/pandao/images/hero-port.webp",
+  "telephone": "{{ p.phone_raw }}",
+  "priceRange": "$$",
+  "areaServed": ["Грозный", "Пятигорск", "Махачкала", "Минеральные Воды", "Москва", "Россия", "СНГ"],
+  "address": { "@type": "PostalAddress", "addressCountry": "CN", "addressLocality": "Гуанчжоу" },
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" },
+  "sameAs": ["https://wa.me/{{ p.whatsapp }}", "https://t.me/{{ p.telegram }}"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"За какой срок доставите груз из Китая на Северный Кавказ?","acceptedAnswer":{"@type":"Answer","text":"Сборные грузы в среднем идут 18–30 дней, контейнерные — от 25 дней. Точный срок логист называет при расчёте с учётом города и характера груза."}},
+    {"@type":"Question","name":"С каким минимальным весом вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Работаем с грузами от 100 кг. Для небольших партий выгодны сборные отправки — объединяем грузы нескольких клиентов в один контейнер."}},
+    {"@type":"Question","name":"Что будет, если груз повредят или потеряют?","acceptedAnswer":{"@type":"Answer","text":"Каждый груз застрахован и под нашей ответственностью. Если что-то пойдёт не по плану — возмещаем ущерб за свой счёт."}},
+    {"@type":"Question","name":"Помогаете ли с выкупом товара в Китае?","acceptedAnswer":{"@type":"Answer","text":"Да. Находим, проверяем и выкупаем товар, ведём переговоры с фабриками и сопровождаем сделку — вам не нужно лететь в Китай."}}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block body %}
+{% include 'partials/landing.html.twig' %}
+{% include 'partials/modal.html.twig' %}
+{% include 'partials/cookie.html.twig' %}
+
+<script src="{{ theme_url }}/js/icons.js"></script>
+<script src="{{ theme_url }}/js/effects.js"></script>
+<script src="{{ theme_url }}/js/site.js"></script>
+{% if form and form.message %}<script>window.pdFormResult=true;</script>{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: 'ru' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ page.title }}{% endblock %}</title>
+<meta name="theme-color" content="#14151A">
+<link rel="canonical" href="{{ page.url(true, true) }}">
+{# SEO meta — editable in Admin → page → Options/SEO (Grav merges site + page metadata) #}
+{% for meta in page.metadata %}
+<meta {% if meta.http_equiv is defined %}http-equiv="{{ meta.http_equiv }}"{% elseif meta.property is defined %}property="{{ meta.property }}"{% else %}name="{{ meta.name }}"{% endif %} content="{{ meta.content|e('html_attr') }}">
+{% endfor %}
+<link rel="icon" href="{{ theme_url }}/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ theme_url }}/css/kit.css">
+{% endblock %}
+{% block head %}{% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

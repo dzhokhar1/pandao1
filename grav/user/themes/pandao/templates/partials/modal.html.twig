@@ -1,0 +1,13 @@
+{# Contact form modal — opened by any "Рассчитать доставку" button (pd-open-form) via site.js #}
+<div class="pd-modal-overlay" id="pd-modal" style="display:none">
+  <div class="pd-modal" role="dialog" aria-modal="true" aria-label="Рассчитать доставку">
+    <button class="pd-modal-close" type="button" data-pd-close aria-label="Закрыть"><i data-lucide="x"></i></button>
+    <span class="pd-modal-grid" aria-hidden="true"></span>
+    <div class="pd-modal-in">
+      <span class="pd-kicker">Заявка PanDao</span>
+      <h3 class="pd-modal-title">Рассчитать доставку</h3>
+      <p class="pd-modal-lead">Оставьте контакты — логист свяжется с вами, уточнит детали груза и рассчитает маршрут из Китая на Северный Кавказ.</p>
+      {% include "forms/form.html.twig" %}
+    </div>
+  </div>
+</div>
