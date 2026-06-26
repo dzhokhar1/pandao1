@@ -31,7 +31,8 @@ fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 // 2) assets the live site actually uses (already webp/svg; unused png/jpg are dropped)
-const ASSETS = ['hero-port.webp', 'warehouse.webp', 'pandao-logo.svg', 'pandao-logo-dark.svg'];
+const ASSETS = ['hero-port.webp', 'warehouse.webp', 'pandao-logo.svg', 'pandao-logo-dark.svg',
+  'proc-2.webp', 'proc-3.webp', 'proc-4.webp', 'proc-5.webp'];
 for (const a of ASSETS) fs.cpSync(path.join(ROOT, 'assets', a), path.join(OUT, 'assets', a));
 
 // 3) css foundation, effects, favicon, legal, vendor

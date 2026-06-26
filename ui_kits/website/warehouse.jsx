@@ -16,10 +16,10 @@ function Warehouse() {
   ];
   const proc = [
     { ic: 'package-check', no: '1', tt: 'Приём груза', dd: 'Принимаем товар от поставщика из любого города Китая', img: '../../assets/warehouse.webp' },
-    { ic: 'search-check', no: '2', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа', img: 'https://plus.unsplash.com/premium_photo-1661933130869-eba2d7e28332?fm=jpg&q=80&w=900&auto=format&fit=crop' },
-    { ic: 'package', no: '3', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу', img: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=900&auto=format&fit=crop' },
-    { ic: 'warehouse', no: '4', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=900&auto=format&fit=crop' },
-    { ic: 'truck', no: '5', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ', img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=900&auto=format&fit=crop' },
+    { ic: 'search-check', no: '2', tt: 'Проверка', dd: 'Проверяем качество и соответствие вашего заказа', img: '../../assets/proc-2.webp' },
+    { ic: 'package', no: '3', tt: 'Упаковка и маркировка', dd: 'Надёжно упакуем и промаркируем каждую единицу', img: '../../assets/proc-3.webp' },
+    { ic: 'warehouse', no: '4', tt: 'Хранение', dd: 'Бережное хранение до отправки без лишних рисков', img: '../../assets/proc-4.webp' },
+    { ic: 'truck', no: '5', tt: 'Отправка', dd: 'Формируем маршрут и отправляем на Северный Кавказ', img: '../../assets/proc-5.webp' },
   ];
   return (
     <section className="pd-section pd-wh-section" id="marshruty">
