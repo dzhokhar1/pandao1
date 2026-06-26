@@ -201,6 +201,11 @@ DirectoryIndex index.html
     Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
+
+# Protect collected leads — never serve the CSV log over HTTP
+<FilesMatch "\\.csv$">
+  Require all denied
+</FilesMatch>
 `);
 
 // 9) api/lead.php — receives the contact form, emails + appends to a CSV log
