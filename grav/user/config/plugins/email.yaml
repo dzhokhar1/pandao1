@@ -1,8 +1,16 @@
 enabled: true
-from: 'noreply@pandaologistics.com'
-from_name: 'PanDao сайт'
-to: 'pandaologistics@gmail.com'
+from: 'info@pandaologistics.com'
+from_name: 'PanDao'
+to: 'pandaohelp@gmail.com'
 to_name: 'PanDao'
 content_type: 'text/html'
 mailer:
-  engine: native
+  engine: smtp
+  smtp:
+    server: 'smtp.beget.com'
+    port: 465
+    encryption: 'ssl'
+    user: 'info@pandaologistics.com'
+    # Пароль почтового ящика Beget. В git НЕ коммитим — задаётся на сервере
+    # (email.yaml на хостинге или в админке Grav → Plugins → Email).
+    password: ''

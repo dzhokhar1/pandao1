@@ -28,11 +28,11 @@ bash scripts/build-grav.sh
    также сохраняются в админке (Forms → Data) — даже если письмо не дошло.
 
 ### SMTP (надёжная доставка писем, вместо PHP mail)
-1. В панели Beget → **Почта** создай ящик на домене, напр. `noreply@pandaologistics.com`, задай пароль.
+1. В панели Beget → **Почта** создай ящик на домене, напр. `info@pandaologistics.com`, задай пароль.
 2. Grav admin → **Plugins → Email**: Engine = **SMTP**, и заполни:
    - Server `smtp.beget.com`, Port `465`, Encryption `SSL`
-   - Username `noreply@pandaologistics.com`, Password = пароль ящика
-   - From `noreply@pandaologistics.com`, To `pandaologistics@gmail.com`
+   - Username `info@pandaologistics.com`, Password = пароль ящика
+   - From `info@pandaologistics.com`, To `pandaohelp@gmail.com`
    Сохрани → «Send Test Email».
    Если 465/SSL не идёт — попробуй Port `587`, Encryption `TLS`.
 3. Либо файлом `user/config/plugins/email.yaml` (через файл-менеджер Beget):
